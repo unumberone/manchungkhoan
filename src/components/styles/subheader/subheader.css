@@ -1,0 +1,168 @@
+.market-stats {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  width: 1896px;
+  margin-top: 5px;
+  background-color: #181925;
+  overflow-x: auto;
+}
+
+.market-card {
+  background-color: #3f3f49;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  width: 369.6px;
+  height: 70px;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 0 4px rgba(68, 64, 64, 0.3);
+}
+.market-card .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 100%;
+}
+.market-card .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1;
+  gap: 12px;
+  padding: 10px;
+}
+.market-card .left .name {
+  font-weight: 600;
+  font-size: 14px;
+  color: #cfcfcf;
+}
+.market-card .left .volume {
+  font-size: 13px;
+  color: #aaa;
+}
+.market-card .left .stats {
+  display: flex;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 13px;
+}
+.market-card .left .stats .up {
+  color: #17C653;
+}
+.market-card .left .stats .nochange {
+  color: #F6B100;
+}
+.market-card .left .stats .down {
+  color: #ff4d4f;
+}
+.market-card .left .stats span {
+  display: flex;
+  align-items: center;
+}
+.market-card .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  flex: 1;
+  gap: 12px;
+  padding: 10px;
+}
+.market-card .right .value-change {
+  font-weight: 400;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+.market-card .right .value-change.green {
+  color: #24d164;
+}
+.market-card .right .value-change.red {
+  color: #ff4d4f;
+}
+.market-card .right .value-change.gray {
+  color: #888;
+}
+.market-card .right .value-change span {
+  font-weight: 400;
+  font-size: 12px;
+  margin-left: 4px;
+}
+.market-card .right .value-trade, .market-card .right .waiting {
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 2px;
+}
+
+.stock-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 10px 16px;
+  background-color: #181925;
+  color: #dcdcdc;
+  font-size: 13px;
+  border-radius: none;
+  margin-top: 5px;
+  gap: 16px;
+}
+.stock-row .MS select {
+  background: #23232b;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 13px;
+  margin-bottom: 4px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  box-shadow: none;
+  transition: background 0.2s;
+}
+.stock-row > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 90px;
+  margin-right: 8px;
+  margin-bottom: 4px;
+  flex: 1 1 90px;
+  white-space: nowrap;
+}
+.stock-row .cell {
+  min-width: 80px;
+  padding: 2px 6px;
+  text-align: center;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  margin-top: 2px;
+  font-weight: 500;
+}
+.stock-row .code {
+  font-weight: 600;
+}
+.stock-row .MSCP {
+  color: #ffc107;
+  font-weight: 600;
+}
+.stock-row .highlight-purple {
+  color: #9c6eff;
+  font-weight: 600;
+}
+.stock-row .highlight-blue {
+  color: #4dd0e1;
+  font-weight: 600;
+}
+.stock-row .highlight-orange {
+  color: #ffb74d;
+  font-weight: 600;
+}/*# sourceMappingURL=subheader.css.map */
