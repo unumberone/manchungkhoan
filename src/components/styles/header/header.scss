@@ -1,13 +1,18 @@
 .header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: #13141f;
   padding: 12px 24px;
   height: 44px;
-  width: 1920px;
   border: 1px solid #1a1a22;
+  font-family: 'BT Beau Sans', sans-serif;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
   gap: 24px;
-  font-family: 'BT Beau Sans' , sans-serif;
 
   .logo img {
     height: 32px;
@@ -15,45 +20,84 @@
 
   .nav-tabs {
     display: flex;
-    margin-left: 40px;
     gap: 24px;
-  }
 
-  .nav-item {
-    color: white;
-    cursor: pointer;
-    position: relative;
-    font-weight: 500;
-    padding-bottom: 5px;
-    transition: color 0.3s;
+    .nav-item {
+      color: white;
+      cursor: pointer;
+      position: relative;
+      font-weight: 500;
+      padding-bottom: 5px;
+      transition: color 0.3s;
 
-    &:hover {
-      color: #a68bff;
-    }
+      &:hover {
+        color: #a68bff;
+      }
 
-    &.active {
-      color: #7b61ff;
+      &.active {
+        color: #7b61ff;
 
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 2px;
-        width: 100%;
-        background-color: #7b61ff;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 2px;
+          width: 100%;
+          background-color: #7b61ff;
+        }
       }
     }
   }
 }
 
-.title{
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  .title {
     color: #99A1B7;
-    font-family: 'Beau Sans', sans-serif;
     font-size: 14px;
     font-weight: 500;
-    margin-left: 600px;
-    line-height: 20px;
-    letter-spacing: 0%;
     text-align: right;
+    margin-right: 10px;
+  }
+
+  .account-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    select {
+      background-color: #1b1c22;
+      border: none;
+      border-radius: 18px;
+      padding: 4px 12px;
+      color: white;
+      font-size: 13px;
+      outline: none;
+      appearance: none;
+    }
+
+    .language-selector {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      .flag-icon {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+      }
+    }
+  }
+  .signout{
+    background: none;
+    border: none;
+    color: #99A1B7;
+    padding: 1;
+    cursor: pointer;
+    align-items: center;
+  }
 }

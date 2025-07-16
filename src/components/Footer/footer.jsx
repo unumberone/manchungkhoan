@@ -1,0 +1,20 @@
+import React from 'react';
+import '../styles/Footer/footer.scss'; 
+import { FaRegUserCircle } from "react-icons/fa";
+
+
+const Footer = () => {
+  return (
+    <div className="footer">
+      <div className="footer-left">
+        <span>Trạng thái <FaRegUserCircle /></span>
+        <span className="status-connected">connected</span>
+      </div>
+      <div className="footer-right">
+        Navisoft
+      </div>
+    </div>
+  );
+};
+
+export default Footer;

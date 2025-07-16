@@ -1,0 +1,27 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0f1014;
+  padding: 8px 20px;
+  font-size: 14px;
+  border-top: 1px solid #222;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-connected {
+  color: #17C653;
+  font-weight: 500;
+}
+
+.footer-right {
+  color: #F6B100;
+  font-weight: 500;
+}/*# sourceMappingURL=footer.css.map */

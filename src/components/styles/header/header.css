@@ -1,23 +1,27 @@
 .header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: #13141f;
   padding: 12px 24px;
   height: 44px;
-  width: 1920px;
   border: 1px solid #1a1a22;
-  gap: 24px;
   font-family: "BT Beau Sans", sans-serif;
 }
-.header .logo img {
-  height: 32px;
-}
-.header .nav-tabs {
+
+.left-section {
   display: flex;
-  margin-left: 40px;
+  align-items: center;
   gap: 24px;
 }
-.header .nav-item {
+.left-section .logo img {
+  height: 32px;
+}
+.left-section .nav-tabs {
+  display: flex;
+  gap: 24px;
+}
+.left-section .nav-tabs .nav-item {
   color: white;
   cursor: pointer;
   position: relative;
@@ -25,13 +29,13 @@
   padding-bottom: 5px;
   transition: color 0.3s;
 }
-.header .nav-item:hover {
+.left-section .nav-tabs .nav-item:hover {
   color: #a68bff;
 }
-.header .nav-item.active {
+.left-section .nav-tabs .nav-item.active {
   color: #7b61ff;
 }
-.header .nav-item.active::after {
+.left-section .nav-tabs .nav-item.active::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -41,13 +45,50 @@
   background-color: #7b61ff;
 }
 
-.title {
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.right-section .title {
   color: #99A1B7;
-  font-family: "Beau Sans", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  margin-left: 600px;
-  line-height: 20px;
-  letter-spacing: 0%;
   text-align: right;
+  margin-right: 10px;
+}
+.right-section .account-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.right-section .account-controls select {
+  background-color: #1b1c22;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 12px;
+  color: white;
+  font-size: 13px;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.right-section .account-controls .language-selector {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.right-section .account-controls .language-selector .flag-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+.right-section .signout {
+  background: none;
+  border: none;
+  color: #99A1B7;
+  padding: 1;
+  cursor: pointer;
+  align-items: center;
 }/*# sourceMappingURL=header.css.map */
