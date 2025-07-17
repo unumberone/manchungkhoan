@@ -1,5 +1,6 @@
 [
   {
+    "id" : 1,
     "soHieuLenh": "123456",
     "thoiGian": "03/05/2021, 00:00",
     "clientId": "132592298",
@@ -14,6 +15,7 @@
     "loaiLenh": "Lệnh thường"
   },
   {
+    "id" : 2,
     "soHieuLenh": "265829",
     "thoiGian": "03/05/2021, 00:00",
     "clientId": "132592298",
@@ -28,6 +30,7 @@
     "loaiLenh": "Lệnh điều kiện"
   },
   {
+    "id" : 3,
     "soHieuLenh": "254806",
     "thoiGian": "03/05/2021, 00:00",
     "clientId": "132592298",
@@ -42,6 +45,7 @@
     "loaiLenh": "Lệnh thường"
   },
   {
+    "id" : 4,
     "soHieuLenh": "268918",
     "thoiGian": "03/05/2021, 00:00",
     "clientId": "132592298",
@@ -56,6 +60,7 @@
     "loaiLenh": "Lệnh thường"
   },
   {
+    "id" : 5,
     "soHieuLenh": "268918",
     "thoiGian": "03/05/2021, 00:00",
     "clientId": "132592298",
@@ -70,6 +75,7 @@
     "loaiLenh": "Lệnh thường"
   },
   {
+    "id" : 6,
     "soHieuLenh": "268918",
     "thoiGian": "03/05/2021, 00:00",
     "clientId": "132592298",

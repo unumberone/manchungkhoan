@@ -1,27 +1,28 @@
 .footer {
+  font-family: 'BT Beau Sans',sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #0f1014;
   padding: 8px 20px;
-  font-size: 14px;
   border-top: 1px solid #222;
+  font-size: 12px;
   margin-top: 10px;
-  color: #fff;
+  gap: 4px;
+  font-weight: 500;
 }
 
 .footer-left {
   display: flex;
   align-items: center;
   gap: 6px;
+  color:#78829D;
 }
 
 .status-connected {
   color: #17C653;
-  font-weight: 500;
 }
 
 .footer-right {
   color: #F6B100;
-  font-weight: 500;
 }

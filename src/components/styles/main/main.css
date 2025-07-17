@@ -1,285 +1,536 @@
 @charset "UTF-8";
-.contain {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  margin-top: 8px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.table {
-  background: #13141f;
-  width: 380px;
-  height: 485px;
-  border-radius: 8px;
-  padding: 12px;
-  min-width: 340px;
-  color: #dcdcdc;
-  margin-left: 12px;
+body {
+  font-family: "BT Beau Sans", Arial, sans-serif;
+  background: #0D1421;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Main container*/
+.main-container {
+  display: flex;
+  height: 100vh;
+  background: #0D1421;
+  gap: 1px;
+}
+
+/* Chart và Order List */
+.left-panel {
+  flex: 1;
+  display: flex;
   flex-direction: column;
+  background: #1B1B2F;
+  min-width: 0;
 }
 
-.tab-name {
+/* Chart container */
+.chart-container {
+  height: 50%;
+  padding: 8px;
+}
+
+.chart-container iframe {
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+}
+
+/* ô hiển thị chi tiết thông tin tài sản của mã hợp đồng */
+.center-panel {
+  position: absolute;
+  width: 440px;
+  background: #1B1B2F;
+  border-right: 1px solid #23243a;
   display: flex;
+  flex-direction: column;
+  margin: auto;
 }
-.tab-name .tab-item {
-  padding: 4px;
-  cursor: pointer;
-  color: #bdbdbd;
+
+.asset-tabs {
+  display: flex;
+  border-bottom: 1px solid #23243a;
+  background: #1B1B2F;
+}
+
+.asset-tab {
+  flex: 1;
+  padding: 12px 8px;
+  text-align: center;
+  color: #99A1B7;
+  font-size: 14px;
   font-weight: 500;
-  border-radius: 8px 8px 0 0;
-  margin-right: 8px;
-  background: transparent;
-  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 2px solid transparent;
 }
-.tab-name .tab-item.active {
+
+.asset-tab.active {
   color: #fff;
   border-bottom: 2px solid #6142FE;
   background: #23243a;
-  font-weight: 500;
 }
 
-.table-content {
-  padding: 6px;
+.asset-content {
+  flex: 1;
+  overflow-y: auto;
+  background: #1B1B2F;
+}
+
+.asset-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid #23243a;
+}
+
+.asset-label {
+  color: #99A1B7;
+  font-size: 13px;
+  font-weight: 400;
+  flex: 1;
+}
+
+.asset-value {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: right;
+}
+
+.asset-value.positive {
+  color: #17C653;
+}
+
+.asset-value.negative {
+  color: #F8285A;
+}
+
+.asset-value.highlight {
+  color: #6142FE;
+  font-weight: 600;
+}
+
+.order-section {
+  flex: 1;
+  background: #1B1B2F;
   display: flex;
   flex-direction: column;
 }
-.table-content .row {
+
+.order-tabs {
   display: flex;
-  justify-content: space-between;
-  align-items: start;
-  padding: 6px;
-  font-size: 14px;
-}
-.table-content .row .label {
-  color: #bdbdbd;
-  text-align: left;
-  background: linear-gradient(180deg, rgba(97, 66, 254, 0) 0%, rgba(97, 66, 254, 0.2) 100%);
-}
-.table-content .row .value {
-  text-align: right;
-  flex: 1;
-  color: #fff;
-  font-weight: 500;
-}
-.table-content .row .value.positive {
-  color: #24d164;
-  font-weight: 600;
-}
-.table-content .row .value.negative {
-  color: #ff4d4f;
-  font-weight: 600;
-}
-.table-content .row .value.highlight {
-  color: #ffc107;
-  font-weight: 600;
+  border-bottom: 1px solid #23243a;
+  background: #1B1B2F;
 }
 
-.chart {
-  width: 1500px;
-  background-color: #13141f;
-  flex-flow: row-reverse wrap;
-  padding: 12px 12px 12px;
-  gap: 16px;
-  border-top: 1px;
+.order-tabs button {
+  background: none;
+  border: none;
+  color: #99A1B7;
+  font-weight: 500;
+  padding: 12px 12px;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 2px solid transparent;
 }
-.chart .chart-overview {
+
+.order-tabs button.active {
+  color: #fff;
+  border-bottom: 2px solid #6142FE;
+  background: #23243a;
+}
+
+.order-table-container {
+  flex: 1;
+  overflow-y: auto;
+  background: #1B1B2F;
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.order-table th,
+.order-table td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #23243a;
+  white-space: nowrap;
+}
+
+.order-table th {
+  background: #23243a;
+  color: #99A1B7;
+  font-weight: 500;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.order-table td {
+  color: #fff;
+  background: #1B1B2F;
+}
+
+.order-table .link {
+  color: #6142FE;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.order-table .green {
+  color: #17C653;
+  font-weight: 500;
+}
+
+.order-table .red {
+  color: #F8285A;
+  font-weight: 500;
+}
+
+.order-table .actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.edit-btn {
+  color: #1B84FF;
+}
+
+.delete-btn {
+  color: #F8285A;
+}
+
+.order-table .edit-btn,
+.order-table .delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.order-table .edit-btn:hover {
+  color: #6142FE;
+  background: rgba(97, 66, 254, 0.1);
+}
+
+.order-table .delete-btn:hover {
+  color: #F8285A;
+  background: rgba(248, 40, 90, 0.1);
+}
+
+.cho-khop {
+  color: #FFA500;
+}
+
+.khop-het {
+  color: #17C653;
+}
+
+.Cho-gui-len-So {
+  color: #6142FE;
+}
+
+.khop-1-phan {
+  color: #FFD700;
+}
+
+.lenh-da-bi-huy {
+  color: #F8285A;
+}
+
+.mac-dinh {
+  color: #99A1B7;
+}
+
+/* bảng hiển thị lựa chọn kiểu giao dịch */
+.right-panel {
+  width: 320px;
+  background: #1B1B2F;
+  display: flex;
+  flex-direction: column;
+}
+
+.trading-form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-tabs {
+  display: flex;
+  border-bottom: 1px solid #23243a;
+  background: #1B1B2F;
+}
+
+.form-tabs button {
+  background: none;
+  border: none;
+  color: #99A1B7;
+  font-weight: 500;
+  padding: 16px 24px;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 2px solid transparent;
+  flex: 1;
+}
+
+.form-tabs button.active {
+  color: #fff;
+  border-bottom: 2px solid #6142FE;
+  background: #23243a;
+}
+
+.form-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #1B1B2F;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #99A1B7;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-group select {
+  background: #23243a;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 18px;
+  font-size: 14px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  font-family: "Inter", Arial, sans-serif;
+  cursor: pointer;
+}
+
+.form-order-type {
+  display: flex;
+  gap: 8px;
+}
+
+.form-order-type button {
+  background: none;
+  border: none;
+  color: #99A1B7;
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex: 1;
+}
+
+.form-order-type button.active {
+  color: #fff;
+  justify-content: center;
+  background: #6142FE;
+}
+
+.form-order-style {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.form-order-style button {
+  background: none;
+  border: none;
+  color: #99A1B7;
+  font-weight: 500;
+  padding: 8px;
+  border-radius: 18px;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.form-order-style button.active {
+  color: #fff;
+  display: inline-block;
+  background: #6142FE;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-input label {
+  color: #99A1B7;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input-control {
+  display: flex;
+  align-items: center;
+  background: #23243a;
+  border-radius: 24px;
+  padding: 8px 16px;
+  justify-content: space-between;
+}
+
+.input-control button {
+  background: none;
+  border: none;
+  color: #99A1B7;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.2s;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-control button:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.input-control span {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  min-width: 80px;
+  text-align: center;
+}
+
+.form-action {
   display: flex;
   gap: 12px;
   margin-top: 12px;
 }
-.chart .chart-overview button {
-  background: none;
-  border: none;
-  color: #99A1B7;
-  font-weight: bold;
-  padding: 8px 18px;
-  border-radius: 8px 8px 0 0;
-  border-bottom: 2px solid transparent;
+
+.form-action button {
   font-family: "Inter", Arial, sans-serif;
+  font-weight: 600;
+  border: none;
+  flex: 1;
+  padding: 14px 16px;
+  border-radius: 100px;
   font-size: 14px;
   cursor: pointer;
-  transition: color 0.2s, border-bottom 0.2s, background 0.2s;
-}
-.chart .chart-overview button.active {
-  color: #fff;
-  border-bottom: 2px solid #6142FE;
-  background: #23243a;
-  font-weight: 500;
-}
-.chart table {
-  width: 100%;
-  overflow-x: auto;
-}
-.chart table th, .chart table td {
-  text-align: center;
-  padding: 6px 8px;
-  font-size: 13px;
-  color: #ccc;
-}
-.chart table th {
-  color: #999;
-}
-.chart table td.green {
-  color: #24d164;
-}
-.chart table td.red {
-  color: #f74361;
-}
-.chart table td.blue {
-  color: #4ca1ff;
-}
-.chart table td.orange {
-  color: #f9a825;
-}
-.chart table td.yellow {
-  color: #ffd700;
-}
-.chart table td.link {
-  color: #4cc6ff;
-  cursor: pointer;
-}
-.chart table tr:hover {
-  background-color: #2a2a35;
-}
-.chart table td.cho-khop {
-  color: #F6B100;
-}
-.chart table td.khop-het {
-  color: #17C653;
-}
-.chart table td.Cho-gui-len-So {
-  color: #FF6F1E;
-}
-.chart table td.khop-1-phan {
-  color: #1B84FF;
-}
-.chart table td.lenh-da-bi-huy {
-  color: #F8285A;
-}
-.chart .actions {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  align-items: center;
-  border: none;
-}
-.chart .actions button {
-  background: none;
-  border: none;
-  padding: 1;
-  cursor: pointer;
-  align-items: center;
-}
-.chart .actions button.edit-btn i, .chart .actions button.edit-btn svg {
-  color: #1B84FF;
-  font-size: 20px;
-  transition: color 0.5s;
-}
-.chart .actions button.edit-btn:hover i, .chart .actions button.edit-btn:hover svg {
-  color: #005be8;
-}
-.chart .actions button.delete-btn i, .chart .actions button.delete-btn svg {
-  color: #F8285A;
-  font-size: 20px;
-  transition: color 0.5s;
-}
-.chart .actions button.delete-btn:hover i, .chart .actions button.delete-btn:hover svg {
-  color: #b8002f;
+  transition: all 0.2s;
 }
 
-.form {
-  /* Tùy chọn: Thêm icon mũi tên trắng cho select */
-}
-.form button {
-  background: none;
-  border: none;
-  color: #99A1B7;
-  font-weight: bold;
-  padding: 8px 18px;
-  border-radius: 8px 8px 0 0;
-  border-bottom: 2px solid transparent;
-  font-family: "Inter", Arial, sans-serif;
-  font-size: 14px;
-  cursor: pointer;
-  transition: color 0.2s, border-bottom 0.2s, background 0.2s;
-}
-.form button.active {
-  color: #fff;
-  border-bottom: 2px solid #6142FE;
-  background: #23243a;
-  font-weight: 500;
-}
-.form .table-form select {
-  background: #23243a;
-  color: #fff;
-  border: none;
-  border-radius: 24px;
-  padding: 12px 18px;
-  font-size: 16px;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  outline: none;
-  font-family: "Inter", Arial, sans-serif;
-  margin-top: 6px;
-  box-shadow: none;
-  position: relative;
-}
-.form .table-form {
-  position: relative;
-}
-.form .table-form select {
-  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='18' viewBox='0 0 24 24' width='18' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
-  background-repeat: no-repeat;
-  background-position: right 16px center;
-  background-size: 18px 18px;
-}
-.form .form-input {
-  background: #23243a;
-  color: #fff;
-  border: none;
-  border-radius: 24px;
-  padding: 12px 18px;
-  font-size: 16px;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  outline: none;
-  font-family: "Inter", Arial, sans-serif;
-  margin-top: 6px;
-  box-shadow: none;
-  position: relative;
-}
-.form .form-action {
-  font-family: "BT Beau Sans", sans-serif;
-  font-style: bold;
-}
-.form .form-action .long-btn {
+.long-btn {
   background-color: #17C653;
   color: #FFFFFF;
-  font-weight: 5 0;
-  border: none;
-  width: 100px;
-  padding: 12px 16px 12px 16px;
-  border-radius: 100px;
-}
-.form .form-action .short-btn {
-  background-color: #F8285A;
-  color: #FFFFFF;
-  font-weight: 5 0;
-  border: none;
-  width: 100px;
-  padding: 12px 16px 12px 16px;
-  border-radius: 100px;
 }
 
-/*&.active {
-      border-radius: 8px #6142FE;
-      color: #fff;
-      font-weight: 500;
-      border-bottom: 2px solid #6142FE;
-      font-family: 'Inter', Arial, sans-serif;
-    }
-    &.active {
-      color: #7b61ff;
-  }*//*# sourceMappingURL=main.css.map */
+.long-btn:hover {
+  background-color: #15B84B;
+  transform: translateY(-1px);
+}
+
+.short-btn {
+  background-color: #F8285A;
+  color: #FFFFFF;
+}
+
+.short-btn:hover {
+  background-color: #E02451;
+  transform: translateY(-1px);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1B1B2F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #23243a;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #99A1B7;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .center-panel {
+    width: 240px;
+  }
+  .right-panel {
+    width: 280px;
+  }
+}
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    height: auto;
+  }
+  .left-panel {
+    height: 60vh;
+  }
+  .chart-container {
+    height: 50%;
+  }
+  .center-panel,
+  .right-panel {
+    width: 100%;
+    height: auto;
+  }
+  .form-content {
+    padding: 16px;
+  }
+}
+.asset-row:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.order-table tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.chart-container iframe {
+  background: #23243a;
+}/*# sourceMappingURL=main.css.map */

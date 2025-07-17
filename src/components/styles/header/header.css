@@ -1,12 +1,13 @@
 .header {
+  font-family: "BT Beau Sans", sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #13141f;
   padding: 12px 24px;
-  height: 44px;
+  height: 50px;
   border: 1px solid #1a1a22;
-  font-family: "BT Beau Sans", sans-serif;
+  font-size: 500;
 }
 
 .left-section {
