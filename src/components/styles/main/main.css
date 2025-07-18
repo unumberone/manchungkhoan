@@ -1,120 +1,30 @@
-@charset "UTF-8";
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "BT Beau Sans", Arial, sans-serif;
-  background: #0D1421;
-  color: #fff;
-  overflow-x: hidden;
-}
-
-/* Main container*/
 .main-container {
   display: flex;
   height: 100vh;
-  background: #0D1421;
-  gap: 1px;
+  background-color: #1a1a1a;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  gap: 8px;
+  padding: 8px;
 }
 
-/* Chart và Order List */
 .left-panel {
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: #1B1B2F;
+  gap: 9px;
   min-width: 0;
 }
 
-/* Chart container */
 .chart-container {
-  height: 50%;
+  border-radius: 1px;
   padding: 8px;
 }
-
 .chart-container iframe {
-  height: 100%;
+  width: 950px;
+  height: 505px;
   border: none;
-  border-radius: 8px;
-}
-
-/* ô hiển thị chi tiết thông tin tài sản của mã hợp đồng */
-.center-panel {
-  position: absolute;
-  width: 440px;
-  background: #1B1B2F;
-  border-right: 1px solid #23243a;
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-}
-
-.asset-tabs {
-  display: flex;
-  border-bottom: 1px solid #23243a;
-  background: #1B1B2F;
-}
-
-.asset-tab {
-  flex: 1;
-  padding: 12px 8px;
-  text-align: center;
-  color: #99A1B7;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s;
-  border-bottom: 2px solid transparent;
-}
-
-.asset-tab.active {
-  color: #fff;
-  border-bottom: 2px solid #6142FE;
-  background: #23243a;
-}
-
-.asset-content {
-  flex: 1;
-  overflow-y: auto;
-  background: #1B1B2F;
-}
-
-.asset-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 12px;
-  border-bottom: 1px solid #23243a;
-}
-
-.asset-label {
-  color: #99A1B7;
-  font-size: 13px;
-  font-weight: 400;
-  flex: 1;
-}
-
-.asset-value {
-  color: #fff;
-  font-size: 13px;
-  font-weight: 500;
-  text-align: right;
-}
-
-.asset-value.positive {
-  color: #17C653;
-}
-
-.asset-value.negative {
-  color: #F8285A;
-}
-
-.asset-value.highlight {
-  color: #6142FE;
-  font-weight: 600;
+  border-radius: 1px;
 }
 
 .order-section {
@@ -257,40 +167,97 @@ body {
   color: #99A1B7;
 }
 
-/* bảng hiển thị lựa chọn kiểu giao dịch */
-.right-panel {
-  width: 320px;
-  background: #1B1B2F;
+.center-panel {
+  position: absolute;
+  right: 340px;
+  width: 400px;
+  background-color: #13141F;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.asset-tabs {
   display: flex;
-  flex-direction: column;
+  border-bottom: 1px solid #23243a;
+  background: #1B1B2F;
+}
+.asset-tabs .asset-tab {
+  flex: 1;
+  padding: 8px;
+  text-align: center;
+  color: #99A1B7;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+.asset-tabs .asset-tab.active {
+  color: #fff;
+  border-bottom: 2px solid #6142FE;
+  background: #23243a;
+}
+.asset-tabs .asset-tab:hover {
+  color: #fff;
+}
+
+.asset-content {
+  padding: 12px;
+  max-height: auto;
+}
+
+.asset-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px;
+  border-bottom: 1px solid #333;
+  font-size: 14px;
+}
+.asset-row:last-child {
+  border-bottom: none;
+}
+.asset-row .asset-label {
+  color: #ccc;
+  flex: 1;
+}
+.asset-row .asset-value {
+  color: #fff;
+  font-weight: 500;
+  text-align: right;
+}
+.asset-row .asset-value.positive {
+  color: #00ff88;
+}
+
+.right-panel {
+  flex: 1;
+  min-width: 300px;
+  max-width: 320px;
 }
 
 .trading-form {
+  border-radius: 4px;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .form-tabs {
-  display: flex;
-  border-bottom: 1px solid #23243a;
-  background: #1B1B2F;
-}
-
-.form-tabs button {
-  background: none;
-  border: none;
   color: #99A1B7;
   font-weight: 500;
-  padding: 16px 24px;
-  font-family: "Inter", Arial, sans-serif;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.2s;
-  border-bottom: 2px solid transparent;
-  flex: 1;
+  display: flex;
 }
-
+.form-tabs button {
+  flex: 1;
+  padding: 12px 8px;
+  border: 3px;
+  background-color: #1E1E25;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+  color: #fff;
+  border-bottom: 2px solid transparent;
+}
 .form-tabs button.active {
   color: #fff;
   border-bottom: 2px solid #6142FE;
@@ -298,70 +265,56 @@ body {
 }
 
 .form-content {
+  padding: 16px;
   flex: 1;
-  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  background: #1B1B2F;
+  gap: 16px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 8px;
-}
-
-.form-group label {
   color: #99A1B7;
   font-size: 14px;
   font-weight: 500;
-}
-
-.form-group select {
-  background: #23243a;
-  color: #fff;
-  border: none;
-  border-radius: 24px;
-  padding: 12px 18px;
-  font-size: 14px;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  outline: none;
-  font-family: "Inter", Arial, sans-serif;
   cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 2px solid transparent;
+}
+.form-group label {
+  color: #ccc;
+  font-size: 14px;
+}
+.form-group select {
+  padding: 8px;
+  background-color: #3a3a3a;
+  border: none;
+  font-weight: 500;
+  border-radius: 24px;
+  color: #fff;
+  font-size: 12px;
 }
 
 .form-order-type {
   display: flex;
-  gap: 8px;
+  gap: 4px;
 }
-
 .form-order-type button {
-  background: none;
-  border: none;
-  color: #99A1B7;
-  font-weight: 500;
-  padding: 10px 16px;
-  border-radius: 20px;
-  font-family: "Inter", Arial, sans-serif;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.2s;
   flex: 1;
+  padding: 8px 12px;
+  background-color: #3a3a3a;
+  border: 1px solid #4a4a4a;
+  border-radius: 24px;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 14px;
 }
-
 .form-order-type button.active {
+  background-color: #4a9eff;
   color: #fff;
-  justify-content: center;
-  background: #6142FE;
-}
-
-.form-order-style {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  border-color: #4a9eff;
 }
 
 .form-order-style button {
@@ -369,7 +322,7 @@ body {
   border: none;
   color: #99A1B7;
   font-weight: 500;
-  padding: 8px;
+  padding: 14px;
   border-radius: 18px;
   font-family: "Inter", Arial, sans-serif;
   font-size: 14px;
@@ -428,7 +381,7 @@ body {
 
 .input-control span {
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   min-width: 80px;
   text-align: center;
@@ -472,65 +425,29 @@ body {
   transform: translateY(-1px);
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+@media (max-width: 1400px) {
+  .center-panel {
+    right: 280px;
+    width: 250px;
+  }
 }
-
-::-webkit-scrollbar-track {
-  background: #1B1B2F;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #23243a;
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #99A1B7;
-}
-
-/* Responsive */
 @media (max-width: 1200px) {
   .center-panel {
-    width: 240px;
+    position: static;
+    width: 100%;
+    margin-top: 8px;
   }
-  .right-panel {
-    width: 280px;
-  }
-}
-@media (max-width: 768px) {
   .main-container {
     flex-direction: column;
-    height: auto;
+    gap: 8px;
   }
   .left-panel {
-    height: 60vh;
+    flex: none;
+    height: 70vh;
   }
-  .chart-container {
-    height: 50%;
-  }
-  .center-panel,
   .right-panel {
-    width: 100%;
-    height: auto;
+    flex: none;
+    max-width: none;
+    height: 30vh;
   }
-  .form-content {
-    padding: 16px;
-  }
-}
-.asset-row:hover {
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.order-table tr:hover {
-  background: rgba(255, 255, 255, 0.02);
-}
-
-button:active {
-  transform: scale(0.98);
-}
-
-.chart-container iframe {
-  background: #23243a;
 }/*# sourceMappingURL=main.css.map */

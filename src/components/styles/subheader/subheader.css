@@ -5,16 +5,8 @@
   width: auto;
   margin-top: 5px;
   background-color: #181925;
-
   overflow-x: auto;
-}
-.market-stats .market-stats {
-  display: flex;
-  gap: 12px;
-  padding: 12px;
-  width: 1896px;
-  margin-top: 5px;
-  background-color: #181925;
+
   overflow-x: auto;
 }
 .market-stats .market-card {
@@ -125,7 +117,7 @@
   outline: none;
   border-radius: 4px;
   padding: 4px 12px;
-  font-size: 13px;
+  font-size: 12x;
   margin-bottom: 4px;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -284,7 +276,7 @@
   outline: none;
   border-radius: 4px;
   padding: 4px 12px;
-  font-size: 13px;
+  font-size: 12px;
   margin-bottom: 4px;
   -webkit-appearance: none;
      -moz-appearance: none;

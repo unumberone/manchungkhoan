@@ -68,7 +68,8 @@ const Main = () => {
             src="https://ssltvc.investing.com/?pair_ID=1&height=504&width=1102&interval=300&plotStyle=hollow_candles&domain_ID=52&lang_ID=52&timezone_ID=21">
           </iframe>
         </div> 
-        {/* form order list */}
+        
+        {/* Order list section */}
         <div className="order-section">
           <div className="order-tabs">
             <button
@@ -84,6 +85,7 @@ const Main = () => {
               Danh sách lệnh điều kiện
             </button>
           </div>
+          
           <div className="order-table-container">
             <table className="order-table">
               <thead>
@@ -138,7 +140,9 @@ const Main = () => {
             </table>
           </div>
         </div>
-        {/* ô nằm giữa hiển thị các trường thông tin của mã giao dịch*/}
+      </div>
+
+      {/* CENTER PANEL - Asset Information */}
       <div className="center-panel">
         <div className="asset-tabs">
           {tab2.map((menu, idx) => (
@@ -163,7 +167,7 @@ const Main = () => {
           ))}
         </div>
       </div>
-      </div>
+
       {/* RIGHT PANEL - Trading Form */}
       <div className="right-panel">
         <div className="trading-form">
@@ -179,16 +183,17 @@ const Main = () => {
               Cài đặt
             </button>
           </div>
+          
           <div className="form-content">
             <div className="form-group">
               <label htmlFor="maChungKhoan">Mã chứng khoán</label>
               <select id="maCK" name="maCK">
-                <option value="disabled" disabled selected>VN30F2501421</option>
-                <option value="1">VN30F2501</option>
-                <option value="2">VN30F201</option>
-                <option value="3">VN30F251</option>
+                <option value="VN30F2501" selected>VN30F2501</option>
+                <option value="VN30F2502">VN30F2502</option>
+                <option value="VN30F2503">VN30F2503</option>
               </select>
             </div>
+            
             <div className="form-order-type">
               <button 
                 className={lenhType === 'Lệnh thường' ? 'active' : ''} 
@@ -201,6 +206,7 @@ const Main = () => {
                 Lệnh điều kiện
               </button>
             </div>
+            
             <div className="form-order-style">
               {orderTypes.map((type) => (
                 <button
@@ -211,12 +217,13 @@ const Main = () => {
                 </button>
               ))}
             </div>
+            
             <div className="form-input">
               <label>Giá đặt</label>
               <div className="input-control">
                 <button onClick={() => setPrice(prev => Math.max(1, prev - 0.1))}>−</button>
                 <span>{price.toFixed(1)}</span>
-                <button onClick={() => setPrice(prev => prev + 1)}>+</button>
+                <button onClick={() => setPrice(prev => prev + 0.1)}>+</button>
               </div>
             </div>
 
@@ -230,8 +237,8 @@ const Main = () => {
             </div>
 
             <div className="form-action">
-              <button className="long-btn" onClick={ () => handleOrderPlacement('Long') }>Long</button>
-              <button className="short-btn" onClick={ () => handleOrderPlacement('Short')}>Short</button>
+              <button className="long-btn" onClick={() => handleOrderPlacement('Long')}>Long</button>
+              <button className="short-btn" onClick={() => handleOrderPlacement('Short')}>Short</button>
             </div>
           </div>
         </div>
