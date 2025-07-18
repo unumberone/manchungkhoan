@@ -7,10 +7,12 @@
   font-family: Arial, sans-serif;
   gap: 8px;
   padding: 8px;
+  margin-top: 6px;
 }
 
 // LEFT PANEL 
 .left-panel {
+  margin-bottom: 6px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -23,25 +25,28 @@
   padding: 8px;
   
   iframe {
-    width: 950px;
+    width: 1102px;
     height: 505px;
     border: none;
-    border-radius: 1px;
   }
 }
 
 //css các phần tử có trong ô danh sách các lệnh
 .order-section {
   flex: 1;
-  background: #1B1B2F;
+  background: #13141F;
   display: flex;
   flex-direction: column;
+}
+
+.thead{
+  background-color: #13141F;
 }
 
 .order-tabs {
   display: flex;
   border-bottom: 1px solid #23243a;
-  background: #1B1B2F;
+  background: #13141F;
 }
 
 .order-tabs button {
@@ -49,9 +54,9 @@
   border: none;
   color: #99A1B7;
   font-weight: 500;
-  padding: 12px 12px;
+  padding: 12px;
   font-family: 'Inter', Arial, sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   cursor: pointer;
   transition: all 0.2s;
   border-bottom: 2px solid transparent;
@@ -66,7 +71,8 @@
 .order-table-container {
   flex: 1;
   overflow-y: auto;
-  background: #1B1B2F;
+  background: #13141F;
+  height: 100px;
 }
 
 .order-table {
@@ -90,11 +96,6 @@
   position: sticky;
   top: 0;
   z-index: 10;
-}
-
-.order-table td {
-  color: #fff;
-  background: #1B1B2F;
 }
 
 .order-table .link {
@@ -136,22 +137,13 @@
   transition: all 0.2s;
 }
 
-.order-table .edit-btn:hover {
-  color: #6142FE;
-  background: rgba(97, 66, 254, 0.1);
-}
+  .cho-khop { color: #FFA500; }
+  .khop-het { color: #17C653; }
+  .Cho-gui-len-So { color: #6142FE; }
+  .khop-1-phan { color: #FFD700; }
+  .lenh-da-bi-huy { color: #F8285A; }
+  .mac-dinh { color: #99A1B7; }
 
-.order-table .delete-btn:hover {
-  color: #F8285A;
-  background: rgba(248, 40, 90, 0.1);
-}
-
-.cho-khop { color: #FFA500; }
-.khop-het { color: #17C653; }
-.Cho-gui-len-So { color: #6142FE; }
-.khop-1-phan { color: #FFD700; }
-.lenh-da-bi-huy { color: #F8285A; }
-.mac-dinh { color: #99A1B7; }
 
 // Ô trung tâm hiển thị thông tin tài sản
 .center-panel {
@@ -315,9 +307,9 @@
     font-size: 14px;
     
     &.active {
-      background-color: #4a9eff;
+      background-color: #24253C;
       color: #fff;
-      border-color: #4a9eff;
+      border-color: #05060F;
     }
   }
 }

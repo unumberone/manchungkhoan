@@ -85,7 +85,7 @@ const Main = () => {
               Danh sách lệnh điều kiện
             </button>
           </div>
-          
+          {/*form hiển thị các lệnh đã đặt */}
           <div className="order-table-container">
             <table className="order-table">
               <thead>
@@ -123,7 +123,7 @@ const Main = () => {
                     <td>{item.klDat}</td>
                     <td>{item.klKhop}</td>
                     <td>{item.giaDat}</td>
-                    <td className={getStatusClass(item.trangThai)}>{item.trangThai}</td>
+                    <td className={[getStatusClass(item.trangThai)]}>{item.trangThai}</td>
                     <td>{item.thoiGianHuy}</td>
                     <td>{item.loaiLenh}</td>
                     <td className="actions">

@@ -110,31 +110,7 @@
   margin-top: 5px;
   gap: 16px;
 }
-.stock-row .MS select {
-  background: #23232b;
-  color: #fff;
-  border: none;
-  outline: none;
-  border-radius: 4px;
-  padding: 4px 12px;
-  font-size: 12x;
-  margin-bottom: 4px;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  box-shadow: none;
-  transition: background 0.2s;
-}
-.stock-row > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 90px;
-  margin-right: 8px;
-  margin-bottom: 4px;
-  flex: 1 1 90px;
-  white-space: nowrap;
-}
+
 .stock-row .cell {
   min-width: 80px;
   padding: 2px 6px;
@@ -148,7 +124,7 @@
   font-weight: 500;
 }
 .stock-row .code {
-  font-weight: 600;
+  font-weight: 500;
 }
 .stock-row .MSCP {
   color: #ffc107;
@@ -264,20 +240,6 @@
   margin-top: 5px;
   gap: 16px;
 
-  .MS select {
-    background: #23232b;
-    color: #fff;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    padding: 4px 12px;
-    font-size: 12px;
-    margin-bottom: 4px;
-    appearance: none;
-    box-shadow: none;
-    transition: background 0.2s;
-  }
-
   > div {
     display: flex;
     flex-direction: column;
@@ -324,5 +286,48 @@
   .highlight-orange {
     color: #ffb74d;
     font-weight: 600;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .market-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .market-card {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .stock-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .market-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .stock-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .market-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .stock-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
   }
 }

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import '../styles/header/header.scss';
-import logo from '../../assets/image/logo.png';
-import { FiLogOut } from "react-icons/fi";
+import company from '../../assets/image/company.svg';
+import vietnam from '../../assets/image/vietnam.svg';
+import vector from '../../assets/image/vector.svg';
+
 
 const tabs = [
   'Giao dịch phát sinh',
@@ -19,7 +21,7 @@ const Header = () => {
       {/* Bên trái: logo và tabs */}
       <div className="left-section">
         <div className="logo">
-          <img src={logo} alt="Navi Software Logo" />
+          <img src={company} alt="Navi Software Logo" />
         </div>
         <nav className="nav-tabs">
           {tabs.map((tab, index) => (
@@ -45,7 +47,7 @@ const Header = () => {
           </div>
           <div className="language-selector">
             <img
-              src="https://flagcdn.com/w40/vn.png"
+              src={vietnam}
               alt="Vietnam Flag"
               className="flag-icon"
             />
@@ -55,9 +57,11 @@ const Header = () => {
             </select>
           </div>
           <div className="logout-btn">
-            <button>
-              <i className="signout" /><FiLogOut />
-            </button>
+            <img
+              src={vector}
+              alt="Logout Icon"
+              className="flag-icon"
+            />
           </div>
         </div>
       </div>

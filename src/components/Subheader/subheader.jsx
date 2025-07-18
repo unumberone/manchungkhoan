@@ -83,7 +83,7 @@ const MarketStats = () => {
       </div>
       <div className="stock-row">
         <div className="MS">
-          <div className="cell">Mã CK</div>
+          <div className="code">Mã CK</div>
           <div className="cell code MSCP">VN30F2501</div>
         </div>
         <div className="days">Ngày
