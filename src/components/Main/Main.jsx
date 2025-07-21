@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../styles/main/main.scss';
 import data from '../../assets/data/context.json'
+import frame from '../../assets/image/framedothi.svg'
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { PiPencilSimpleLine } from "react-icons/pi";
 
@@ -62,11 +63,7 @@ const Main = () => {
       {/* LEFT PANEL - Chart */}
       <div className="left-panel">
         <div className="chart-container">
-          <iframe
-            height="504"
-            width="1102"
-            src="https://ssltvc.investing.com/?pair_ID=1&height=504&width=1102&interval=300&plotStyle=hollow_candles&domain_ID=52&lang_ID=52&timezone_ID=21">
-          </iframe>
+          <img src={frame} alt="frame đồ thị" />
         </div> 
         
         {/* Order list section */}

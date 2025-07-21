@@ -66,7 +66,7 @@ const MarketStats = () => {
                 <div className="volume">{index.volume}</div>
                 <div className="stats">
                   <span className="up">↑ {index.stats.up}</span>
-                  <span className="nochange">■ {index.stats.noChange}</span>
+                  <span className="nochange"> ■ {index.stats.noChange}</span>
                   <span className="down">↓ {index.stats.down}</span>
                 </div>
               </div>
