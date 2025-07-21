@@ -190,6 +190,7 @@
   padding: 4px;
   border-bottom: 1px solid #333;
   font-size: 14px;
+  border-bottom: none !important;
   
   &:last-child {
     border-bottom: none;
