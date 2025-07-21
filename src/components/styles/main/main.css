@@ -416,12 +416,6 @@
   transform: translateY(-1px);
 }
 
-@media (max-width: 1400px) {
-  .center-panel {
-    right: 280px;
-    width: 250px;
-  }
-}
 @media (max-width: 1200px) {
   .center-panel {
     position: static;
@@ -431,10 +425,24 @@
   .main-container {
     flex-direction: column;
     gap: 8px;
+    height: auto;
+    padding: 4px;
+  }
+  .left-panel, .right-panel, .center-panel {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+    position: static;
+  }
+  .center-panel {
+    margin-top: 8px;
+    width: 100%;
+    position: static;
   }
   .left-panel {
-    flex: none;
-    height: 70vh;
+    height: auto;
+    margin-bottom: 8px;
   }
   .right-panel {
     flex: none;
