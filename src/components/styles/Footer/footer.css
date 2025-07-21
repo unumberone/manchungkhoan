@@ -7,15 +7,16 @@
   padding: 8px 20px;
   border-top: 1px solid #222;
   font-size: 12px;
-  margin-top: 10px;
-  gap: 4px;
+  gap: 12px;
   font-weight: 500;
+  margin-top: auto;
+  flex-direction: row;
 }
 
 .footer-left {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   color: #78829D;
 }
 
@@ -25,4 +26,25 @@
 
 .footer-right {
   color: #F6B100;
+}
+
+@media (max-width: 1200px) {
+  .footer {
+    padding: 202px;
+    font-size: 14px;
+    gap: 10px;
+  }
+  .footer-left,
+  .footer-right {
+    justify-content: flex-start;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+}
+@media (max-width: 600px) {
+  .footer {
+    padding: 200px;
+    font-size: 14px;
+    gap: 12px;
+  }
 }/*# sourceMappingURL=footer.css.map */
