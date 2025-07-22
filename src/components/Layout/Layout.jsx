@@ -1,8 +1,8 @@
 import React from 'react'
 import Header from './../Header/Header'
 import Subheader from './../Subheader/subheader'
-import Main from './../Main/Main'
 import Footer from './../Footer/footer'
+import Router from './../Router/route'
 
 const Layout = () => {
   return (
@@ -10,7 +10,7 @@ const Layout = () => {
      <>
         < Header />
         < Subheader />
-        < Main />
+        < Router />
         < Footer />
      </>
     </div>

@@ -5,11 +5,12 @@
   padding: 2px;
   width: auto;
   margin-top: 5px;
-  background-color: #181925;
+  background-color: #13141F;
   overflow-x: auto;
+  margin-left: 6px;
 
 .market-card {
-  background-color: #3f3f49;
+  background-color: #13141F;
   color: white;
   padding: 12px;
   border-radius: 8px;
@@ -19,7 +20,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0 0 4px rgba(68, 64, 64, 0.3);
+  box-shadow: 14px 14px rgba(12, 12, 12, 0.3);
 }
 .market-card .row {
   display: flex;

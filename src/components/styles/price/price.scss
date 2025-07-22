@@ -1,0 +1,21 @@
+.price-table {
+    z-index: 1000;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+
+  th, td {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+  }
+
+  .green {
+    background-color: #007f00; // xanh đậm
+    color: white;
+  }
+
+  .red {
+    background-color: #c00000; // đỏ đậm
+    color: white;
+  }
+}

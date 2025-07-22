@@ -1,0 +1,18 @@
+.price-table {
+  z-index: 1000;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+.price-table th, .price-table td {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+}
+.price-table .green {
+  background-color: #007f00;
+  color: white;
+}
+.price-table .red {
+  background-color: #c00000;
+  color: white;
+}/*# sourceMappingURL=price.css.map */

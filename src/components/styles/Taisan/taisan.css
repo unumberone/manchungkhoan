@@ -1,0 +1,69 @@
+.center-panel {
+  position: absolute;
+  right: 360px;
+  width: 400px;
+  margin-top: 10px;
+  background-color: #13141F;
+  z-index: 1;
+}
+
+.asset-tabs {
+  display: flex;
+  border-bottom: 1px solid #23243a;
+  background: #1B1B2F;
+}
+.asset-tabs .asset-tab {
+  flex: 1;
+  white-space: nowrap;
+  padding: 16px;
+  text-align: center;
+  color: #99A1B7;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+.asset-tabs .asset-tab.active {
+  color: #fff;
+  border-bottom: 2px solid #6142FE;
+  background: #23243a;
+}
+.asset-tabs .asset-tab:hover {
+  color: #fff;
+}
+
+.asset-content {
+  padding: 10px;
+  max-height: auto;
+}
+
+.asset-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px;
+  border-bottom: 1px solid #333;
+  font-size: 14px;
+  border-bottom: none !important;
+}
+.asset-row:last-child {
+  border-bottom: none;
+}
+.asset-row .asset-label {
+  font-family: "BT Beau Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  color: #99A1B7;
+  line-height: 21px;
+  letter-spacing: 0;
+  vertical-align: middle;
+}
+.asset-row .asset-value {
+  color: #fff;
+  font-weight: 500;
+  text-align: right;
+}
+.asset-row .asset-value.positive {
+  color: #00ff88;
+}/*# sourceMappingURL=taisan.css.map */

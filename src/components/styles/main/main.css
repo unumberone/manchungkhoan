@@ -1,15 +1,16 @@
 .main-container {
   display: flex;
-  height: 100vh;
+  height: 85vh;
   width: auto;
   background-color: #000000;
   color: #fff;
   font-family: Arial, sans-serif;
   margin-top: 6px;
+  margin-left: 10px;
 }
 
 .left-panel {
-  background-color: #05060F;
+  background-color: #000000;
   margin-bottom: 6px;
   flex: 1;
   display: flex;
@@ -155,7 +156,7 @@
 
 .center-panel {
   position: absolute;
-  right: 370px;
+  right: 360px;
   width: 400px;
   margin-top: 10px;
   background-color: #13141F;
@@ -170,7 +171,7 @@
 .asset-tabs .asset-tab {
   flex: 1;
   white-space: nowrap;
-  padding: 14px;
+  padding: 16px;
   text-align: center;
   color: #99A1B7;
   font-size: 14px;
@@ -188,7 +189,7 @@
 }
 
 .asset-content {
-  padding: 12px;
+  padding: 10px;
   max-height: auto;
 }
 
@@ -210,7 +211,7 @@
   font-style: normal;
   font-size: 14px;
   color: #99A1B7;
-  line-height: 20px;
+  line-height: 21px;
   letter-spacing: 0;
   vertical-align: middle;
 }

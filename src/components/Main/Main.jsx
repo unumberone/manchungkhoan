@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
+import { useNavigate, useLocation, Outlet } from 'react-router-dom';
+import '../pages/Price'
 import '../styles/main/main.scss';
 import data from '../../assets/data/context.json'
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { PiPencilSimpleLine } from "react-icons/pi";
 
 const tab2 = [
-  'Tài sản',
-  '10 Giá',
-  'Lịch sử giao dịch',
-  'Mã phát sinh'
+  { label: 'Tài sản', path: '/tai-san' },
+  { label: '10 Giá', path: '/10-gia' },
+  { label: 'Lịch sử giao dịch', path: '/lich-su-giao-dich' },
+  { label: 'Mã phát sinh', path: '/ma-phat-sinh' }
 ];
 
 const handleOrderPlacement = (type) => {
@@ -17,22 +19,7 @@ const handleOrderPlacement = (type) => {
 
 const orderTypes = ['ATO', 'ATC', 'MOK', 'MTL', 'MAK'];
 
-const tableData = [
-  { label: 'Tổng lợi nhuận', value: '10,046.59' },
-  { label: 'Mã hợp đồng', value: 'VN30F2501', highlight: true },
-  { label: 'Vị thế', value: '--' },
-  { label: 'Lãi lỗ', value: '2,046.59', positive: true },
-  { label: 'Sức mua (357007)', value: '--' },
-  { label: 'Lãi/lỗ chưa đóng', value: '--' },
-  { label: 'Tổng tài sản', value: '120,000,0000' },
-  { label: 'Tiền mặt', value: '--' },
-  { label: 'Tiền ký quỹ tại VSD', value: '--' },
-  { label: 'Ký quỹ ban đầu', value: '--' },
-  { label: 'Phí giao dịch + thuế', value: '--' },
-  { label: 'Tỷ lệ sử dụng TSKO', value: '--' },
-  { label: 'Tỷ lệ an toàn', value: '100%' },
-  { label: 'Phí trả VSD', value: '500.0' },
-];
+
 
 const getStatusClass = (status = '') => {
   if (status.includes('Chờ khớp')) return 'cho-khop';
@@ -51,6 +38,9 @@ const Main = () => {
   const [orderStyle, setOrderStyle] = useState('ATO');
   const [price, setPrice] = useState(1220.3);
   const [volume, setVolume] = useState(1000.0);
+  
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleDelete = (soHieuLenh) => {
     const newData = filteredData.filter(item => item.soHieuLenh !== soHieuLenh);
@@ -64,9 +54,9 @@ const Main = () => {
         <div className="chart-container">
           <iframe
             src="https://streamprs.tvsi.com.vn:5000/chart?symbol=BVH"
-            title=""
-            style={{ height: '100%', width: '100%', border: 'unset' }}>
-          </iframe>
+            title="Biểu đồ chứng khoán"
+            style={{ height: "100%", width: "100%", border: "unset" }}
+          ></iframe>
         </div>
 
         {/* Order list section */}
@@ -156,33 +146,25 @@ const Main = () => {
           </div>
         </div>
         {/* CENTER PANEL - Asset Information */}
-      <div className="center-panel">
+        <div className="center-panel">
         <div className="asset-tabs">
-          {tab2.map((menu, idx) => (
-            <div className={`asset-tab${idx === 0 ? " active" : ""}`} key={idx}>
-              {menu}
-            </div>
-          ))}
-        </div>
+        {tab2.map((menu, idx) => (
+          <div
+            key={idx}
+            onClick={() => navigate(menu.path)}
+            className={`asset-tab${
+              location.pathname === menu.path ? " active" : ""
+            }`}
+          >
+            {menu.label}
+          </div>
+        ))}
+          </div>
         <div className="asset-content">
-          {tableData.map((row, idx) => (
-            <div className="asset-row" key={idx}>
-              <div className="asset-label">{row.label}</div>
-              <div
-                className={
-                  "asset-value" +
-                  (row.positive ? " positive" : "") +
-                  (row.negative ? " negative" : "") +
-                  (row.highlight ? " highlight" : "")
-                }
-              >
-                {row.value}
-              </div>
-            </div>
-          ))}
+          <Outlet />
         </div>
-      </div>
-      </div>
+        </div>
+        </div>
       {/* RIGHT PANEL - Trading Form */}
       <div className="right-panel">
         <div className="trading-form">
