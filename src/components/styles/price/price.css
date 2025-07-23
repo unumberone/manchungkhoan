@@ -1,18 +1,42 @@
+.asset-content {
+  background-color: #000000;
+  width: 100%;
+}
+
 .price-table {
-  z-index: 1000;
+  z-index: 100;
   width: 100%;
   border-collapse: collapse;
   text-align: center;
+  margin-top: 5px;
+  background-color: #13141F;
+  table-layout: fixed;
 }
-.price-table th, .price-table td {
-  padding: 8px 12px;
-  border: 1px solid #ccc;
+.price-table th,
+.price-table td {
+  padding: 5px;
+  border: 1px solid #13141F;
+  background-color: #24253C;
+}
+.price-table .tab-name {
+  color: #99A1B7;
+  font-size: 14px;
+  white-space: nowrap;
+  font-weight: normal;
+  border: none;
+  background-color: #000000;
 }
 .price-table .green {
-  background-color: #007f00;
+  background-color: #17C653;
   color: white;
 }
 .price-table .red {
-  background-color: #c00000;
+  background-color: #F8285A;
   color: white;
+}
+.price-table .col-bid-volume {
+  width: 70px;
+  max-width: 80px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }/*# sourceMappingURL=price.css.map */

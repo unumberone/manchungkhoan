@@ -22,7 +22,7 @@
 
   .chart-container{
     width: 1130px;
-    height: 498px;
+    height: 550px;
     margin-bottom: 10px;
   
   }
@@ -34,6 +34,7 @@
   flex-direction: column;
   border: none;
   width: 1528px;
+  height: 335px;
 }
 
 .thead{
@@ -133,12 +134,12 @@
   transition: all 0.2s;
 }
 
-  .cho-khop { color: #FFA500; }
+  .cho-khop { color: #F6B100; }
   .khop-het { color: #17C653; }
-  .Cho-gui-len-So { color: #6142FE; }
-  .khop-1-phan { color: #FFD700; }
+  .Cho-gui-len-So { color: #FF6F1E; }
+  .khop-1-phan { color: #1B84FF; }
   .lenh-da-bi-huy { color: #F8285A; }
-  .mac-dinh { color: #99A1B7; }
+  .mac-dinh { color: #FFFFFF; }
 
 
 // Ô trung tâm hiển thị thông tin tài sản
@@ -159,7 +160,7 @@
   .asset-tab {
     flex: 1;
     white-space: nowrap;
-    padding: 16px;
+    padding: 12px;
     text-align: center;
     color: #99A1B7;
     font-size: 14px;
@@ -180,7 +181,7 @@
 }
 
 .asset-content {
-  padding: 10px;
+  padding: 2px;
   max-height: auto;
 }
 
@@ -224,7 +225,7 @@
   background-color: #05060F;
   flex: 1;
   margin-top: 10px;
-  max-width: 360px;
+  max-width: 350px;
 }
 
 // Trading form
@@ -284,13 +285,13 @@
   border-bottom: 2px solid transparent;
   
   select {
-    padding: 8px;
-    background-color: #3a3a3a;
+    padding: 16px;
+    background-color: #24253C;
     border: none;
     font-weight: 500;
     border-radius: 24px;
     color: #fff;
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
@@ -301,7 +302,7 @@
   
   button {
     flex: 1;
-    padding: 8px 12px;
+    padding: 10px 12px;
     background-color: #3a3a3a;
     border: 1px solid #4a4a4a;
     border-radius: 24px;

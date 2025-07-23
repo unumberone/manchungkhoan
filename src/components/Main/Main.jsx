@@ -47,6 +47,9 @@ const Main = () => {
     setFilteredData(newData);
   };
 
+  const getBackgroundColor = (id) => (id % 2 === 0 ? 'red' : 'blue');
+
+
   return (
     <div className="main-container">
       {/* LEFT PANEL - Chart */}

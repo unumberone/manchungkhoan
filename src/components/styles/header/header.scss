@@ -22,7 +22,7 @@
 
   .nav-tabs {
     display: flex;
-    gap: 24px;
+    gap: 40px;
 
     .nav-item {
       color: white;
@@ -70,12 +70,16 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    .account-dropdown{
+      background-color: #24253C;
+      border-radius: 20px;
+    }
 
     select {
-      background-color: #1b1c22;
+      background-color: #24253C;
       border: none;
-      border-radius: 18px;
-      padding: 4px 12px;
+      border-radius: 20px;
+      padding: 8px 16px;
       color: white;
       font-size: 14px;
       outline: none;

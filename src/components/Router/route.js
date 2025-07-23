@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom'
 import Main from '../Main/Main'
 import CurrentAsset from '../pages/Taisan'
 import Gia from '../pages/Price'
-// import LichSu from '../pages/LichSu'
-// import MaPhatSinh from '../pages/MaPhatSinh'
+import LichSu from '../pages/history'
+import MaPhatSinh from '../pages/GeneratedCode'
 
 const Router = () => {
   return (
@@ -13,10 +13,8 @@ const Router = () => {
       <Route path="/" element={<Main />}>
         <Route path="tai-san" element={<CurrentAsset />} />
         <Route path="10-gia" element={<Gia />} />
-        {/* 
         <Route path="lich-su-giao-dich" element={<LichSu />} />
         <Route path="ma-phat-sinh" element={<MaPhatSinh />} />
-        */}
       </Route>
     </Routes>
   )

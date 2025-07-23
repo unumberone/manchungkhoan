@@ -4,8 +4,8 @@
   gap: 12px;
   padding: 2px;
   width: auto;
-  margin-top: 5px;
-  background-color: #13141F;
+  margin-top: 10px;
+  background-color: #000000;
   overflow-x: auto;
   margin-left: 6px;
 
@@ -48,18 +48,34 @@
 }
 .market-card .left .stats {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   font-weight: 600;
   font-size: 13px;
 }
+.market-card .left .stats .valueUp{
+  font-size: 13px;
+  font-weight: 400;
+  color: #aaa;
+}
+.market-card .left .stats .valueDown{
+  font-size: 13px;
+  font-weight: 400;
+  color: #aaa;  
+}
 .market-card .left .stats .up {
   color: #17C653;
+}
+.market-card .left .stats .valueUp {
+  color: #9E63FF;
 }
 .market-card .left .stats .nochange {
   color: #F6B100;
 }
 .market-card .left .stats .down {
   color: #ff4d4f;
+}
+.market-card .left .stats .valueDown {
+  color: #00CECE;
 }
 .market-card .left .stats span {
   display: flex;
@@ -102,24 +118,24 @@
 .stock-row {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  justify-content: flex-start;
   padding: 10px 16px;
   background-color: #181925;
   color: #dcdcdc;
   font-size: 13px;
   border-radius: none;
-  margin-top: 5px;
+  margin-top: 10px;
   gap: 16px;
 }
 
 .stock-row .cell {
   min-width: 80px;
   padding: 2px 6px;
-  text-align: center;
+  text-align:start;
   white-space: nowrap;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items:flex-start;
+  justify-content: flex-start;
   border-radius: 4px;
   margin-top: 2px;
   font-weight: 500;

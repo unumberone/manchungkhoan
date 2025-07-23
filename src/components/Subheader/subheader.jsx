@@ -5,52 +5,52 @@ const indexData = [
   {
     name: 'VN-INDEX',
     value: '1,283.26',
-    change: '+15.96 (1.26%)',
+    change: '+15.96 1.26%',
     changeColor: 'green',
     volume: '895,786,314 Cổ phần',
     valueTrade: '21,396.060 Tỷ',
     waiting: 'Chờ nhận lệnh',
-    stats: { up: 200, noChange: 59, down: 111 }
+    stats: { up: 200, valueUp: 4, noChange: 59, down: 111, valueDown: 0 }
   },
   {
     name: 'VN30',
     value: '1,372.04',
-    change: '+19.79 (1.46%)',
+    change: '+19.79 1.46%',
     changeColor: 'green',
     volume: '482,264,152 Cổ phần',
     valueTrade: '13,283.441 Tỷ',
     waiting: 'Chờ nhận lệnh',
-    stats: { up: 27, noChange: 1, down: 2 }
+    stats: { up: 27, valueUp:0, noChange: 1, down: 2,valueDown:0 }
   },
   {
     name: 'VNXALL',
     value: '0',
-    change: '0 (0%)',
+    change: '0 0%',
     changeColor: 'gray',
     volume: '905,524,492 Cổ phần',
     valueTrade: '21,524.209 Tỷ',
     waiting: 'Chờ nhận lệnh',
-    stats: { up: 241, noChange: 94, down: 123 }
+    stats: { up: 241,valueUp:0, noChange: 94, down: 123,valueDown:0 }
   },
   {
     name: 'HNX-INDEX',
     value: '216.04',
-    change: '+1.91 (0.89%)',
+    change: '+1.91 0.89%',
     changeColor: 'green',
     volume: '56,598,636 Cổ phần',
     valueTrade: '933.220 Tỷ',
     waiting: 'Chờ nhận lệnh',
-    stats: { up: 104, noChange: 69, down: 56 }
+    stats: { up: 104,valueUp:10, noChange: 69, down: 56,valueDown:4 }
   },
   {
     name: 'HNX-UPCOMINDEX',
     value: '93.59',
-    change: '+0.19 (0.20%)',
+    change: '+0.19 0.20%',
     changeColor: 'green',
     volume: '46,870,777 Cổ phần',
     valueTrade: '1,509.460 Tỷ',
     waiting: 'Chờ nhận lệnh',
-    stats: { up: 192, noChange: 76, down: 92 }
+    stats: { up: 192, valueUp:14, noChange: 76, valueDown: 4 }
   }
 ];
 
@@ -66,8 +66,10 @@ const MarketStats = () => {
                 <div className="volume">{index.volume}</div>
                 <div className="stats">
                   <span className="up">↑ {index.stats.up}</span>
+                  <span className='valueUp'>({index.stats.valueUp})</span>
                   <span className="nochange"> ■ {index.stats.noChange}</span>
                   <span className="down">↓ {index.stats.down}</span>
+                  <span className='valueDown'>({index.stats.valueDown})</span>
                 </div>
               </div>
               <div className="right">
