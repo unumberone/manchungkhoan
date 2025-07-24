@@ -1,0 +1,41 @@
+.table-data{
+    gap: 8px;
+    justify-content: space-between;
+    height: 406px;
+    line-height: 25px;
+
+    .tab-name{
+        padding: 8px 20px;
+        text-align: start;
+        gap: 14px;
+        width: 26%;
+        font-weight: 500;
+        font-size: 14px;
+        color: #99A1B7;
+    }
+
+    table{
+        border-collapse: collapse;
+        text-align: left;
+
+         tbody{
+            font-size: 14px;
+            font-style: 500;
+            color: #ffffff;
+            justify-content: space-between;
+
+         tr{
+            th,td{
+            padding: 12px;
+            font-weight: normal;
+            text-align: right;
+            }
+         }
+    }
+    }
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #242533 !important;
+}
+

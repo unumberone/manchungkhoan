@@ -1,59 +1,35 @@
-.asset-tabs {
-  display: flex;
-  border-bottom: 1px solid #23243a;
-  background: #1B1B2F;
-}
-.asset-tabs .asset-tab {
-  flex: 1;
-  white-space: nowrap;
-  padding: 16px;
-  text-align: center;
-  color: #99A1B7;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-}
-.asset-tabs .asset-tab.active {
-  color: #fff;
-  border-bottom: 2px solid #6142FE;
-  background: #23243a;
-}
-.asset-tabs .asset-tab:hover {
-  color: #fff;
-}
-
-.asset-content {
-  max-height: auto;
-}
-
-.asset-row {
-  display: flex;
+.table-history {
+  gap: 12px;
   justify-content: space-between;
-  align-items: center;
-  padding: 4px;
-  border-bottom: 1px solid #333;
-  font-size: 14px;
-  border-bottom: none !important;
+  text-align: center;
+  table-layout: fixed;
+  width: 95%;
+  border-spacing: 0 12px;
+  height: 406px;
+  line-height: 23px;
 }
-.asset-row:last-child {
-  border-bottom: none;
+.table-history .green--color {
+  color: #17C653;
 }
-.asset-row .asset-label {
-  font-family: "BT Beau Sans", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 14px;
+.table-history .red--color {
+  color: #F8285A;
+}
+.table-history .tab-name {
+  white-space: nowrap;
+  text-align: center;
+  font-weight: normal;
+  font-size: 12px;
   color: #99A1B7;
-  line-height: 21px;
-  letter-spacing: 0;
-  vertical-align: middle;
 }
-.asset-row .asset-value {
-  color: #fff;
-  font-weight: 500;
-  text-align: right;
+.table-history .tab-name th, .table-history .tab-name td {
+  padding: 10px;
 }
-.asset-row .asset-value.positive {
-  color: #00ff88;
+.table-history tbody {
+  font-size: 14px;
+  font-style: medium;
+  color: #FFFFFF;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #242533 !important;
 }/*# sourceMappingURL=history.css.map */

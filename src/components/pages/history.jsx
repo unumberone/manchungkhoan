@@ -5,26 +5,25 @@ const dataHistory = [
     { timeHistory: "14:45:00", priceHistory: 1441.1, upDown: 4.1, massValue: 1, cumulativeMass: 956},
     { timeHistory: "14:45:00", priceHistory: 1441.1, upDown: 4.1, massValue: 1, cumulativeMass: 956},
     { timeHistory: "14:45:00", priceHistory: 1441.1, upDown: 4.1, massValue: 1, cumulativeMass: 956},
+    { timeHistory: "14:45:00", priceHistory: 1441.1, upDown: -4.1, massValue: 1, cumulativeMass: 956},
     { timeHistory: "14:45:00", priceHistory: 1441.1, upDown: 4.1, massValue: 1, cumulativeMass: 956},
     { timeHistory: "14:45:00", priceHistory: 1441.1, upDown: 4.1, massValue: 1, cumulativeMass: 956},
     { timeHistory: "14:45:00", priceHistory: 1441.1, upDown: 4.1, massValue: 1, cumulativeMass: 956},
-    { timeHistory: "14:45:00", priceHistory: 1441.1, upDown: 4.1, massValue: 1, cumulativeMass: 956},
-    { timeHistory: "14:45:00", priceHistory: 1441.1, upDown: 4.1, massValue: 1, cumulativeMass: 956},
+    { timeHistory: "14:45:00", priceHistory: 1441.1, upDown: -3.8, massValue: 1, cumulativeMass: 956},
     { timeHistory: "14:45:00", priceHistory: 1441.1, upDown: 4.1, massValue: 1, cumulativeMass: 956},
     { timeHistory: "14:45:00", priceHistory: 1441.1, upDown: 4.1, massValue: 1, cumulativeMass: 956},
     { timeHistory: "14:45:00", priceHistory: 1441.1, upDown: 4.1, massValue: 1, cumulativeMass: 956},
     { timeHistory: "14:45:00", priceHistory: 1441.1, upDown: 4.1, massValue: 1, cumulativeMass: 956}
 ];
 
+
 const getUpDownClass = (value) => {
-  if (value > 0) return 'up';      
-  if (value < 0) return 'down';     
-  return 'neutral';                 
+  const num = parseFloat(value);
+  if (value > 0) return 'green--color';      
+  if (value < 0) return 'red--color';     
+  return '#';                 
 };
 
-const getPriceClass = (price) => {
-  return price > 1400 ? 'high' : 'low';
-};
 
 const history = () => {
 return (
@@ -42,12 +41,17 @@ return (
       {dataHistory.map((row, idx) => (
         <tr key={idx}>
           <td>{row.timeHistory}</td>
-          <td className={getPriceClass(row.priceHistory)}>{row.priceHistory}</td>
-          <td className={getUpDownClass(row.upDown)}>{row.upDown}</td>
+          <td className={getUpDownClass(row.priceHistory)}>{row.priceHistory}</td> {/*viết điều kiện để hiển thị màu xanh và đỏ với đỏ khi có giá trị +/- < 0 */}
+          <td className={getUpDownClass(row.upDown)}>
+            {row.upDown < 0
+              ? `- ${Math.abs(row.upDown)}`
+              : `${row.upDown}`}
+          </td>
+
           <td>{row.massValue}</td>
           <td>{row.cumulativeMass}</td>
         </tr>
-      ))}
+      ))} 
     </tbody>
   </table>
 );
