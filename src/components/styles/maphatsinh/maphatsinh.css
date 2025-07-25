@@ -28,6 +28,15 @@
   font-weight: normal;
   text-align: right;
 }
+.table-data table .code {
+  color: #17C653;
+}
+.table-data table .priceOrder {
+  color: #F8285A;
+}
+.table-data table .total {
+  text-align: right;
+}
 
 tbody tr:nth-child(odd) {
   background-color: #242533 !important;

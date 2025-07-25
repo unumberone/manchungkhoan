@@ -12,12 +12,34 @@
   margin-top: auto;
   flex-direction: row;
 }
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 11px;
+    padding: 10px 16px;
+    text-align: center;
+  }
+}
+@media (max-width: 480px) {
+  .footer {
+    font-size: 10px;
+    gap: 4px;
+    padding: 8px 12px;
+  }
+}
 
 .footer-left {
   display: flex;
   align-items: center;
   gap: 8px;
   color: #78829D;
+}
+@media (max-width: 768px) {
+  .footer-left {
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 .status-connected {
@@ -27,24 +49,9 @@
 .footer-right {
   color: #F6B100;
 }
-
-@media (max-width: 1200px) {
-  .footer {
-    padding: 202px;
-    font-size: 14px;
-    gap: 10px;
-  }
-  .footer-left,
+@media (max-width: 768px) {
   .footer-right {
-    justify-content: flex-start;
+    width: 100%;
     text-align: center;
-    margin-bottom: 8px;
-  }
-}
-@media (max-width: 600px) {
-  .footer {
-    padding: 200px;
-    font-size: 14px;
-    gap: 12px;
   }
 }/*# sourceMappingURL=footer.css.map */

@@ -15,13 +15,72 @@
   height: 406px;
   line-height: 27px;
 }
-.price-table th,
+.price-table th {
+  background-color: #13141F;
+}
 .price-table td {
   padding: 2px;
   border: 1px solid #13141F;
-  background-color: #13141F;
+  background-color: #24253C;
 }
-.price-table .tab-name {
+.price-table tbody tr:nth-child(3) td:nth-child(4) {
+  background-color: #F8285A;
+}
+.price-table tbody tr:nth-child(6) td:nth-child(4) {
+  background-color: #F8285A;
+}
+.price-table tbody tr:nth-child(7) td:nth-child(4) {
+  background-color: #F8285A;
+}
+.price-table tbody tr:nth-child(8) td:nth-child(4) {
+  background-color: #F8285A;
+}
+.price-table tbody tr:nth-child(10) td:nth-child(4) {
+  background-color: #F8285A;
+}
+.price-table tbody tr:nth-child(13) td:nth-child(4) {
+  background-color: #F8285A;
+}
+.price-table tbody tr:nth-child(14) td:nth-child(4) {
+  background-color: #F8285A;
+}
+.price-table tbody tr:nth-child(1) td:nth-child(1),
+.price-table tbody tr:nth-child(9) td:nth-child(1) {
+  background-color: #F8285A;
+}
+.price-table tbody tr:nth-child(1) td:nth-child(4) {
+  background-color: #17C653;
+}
+.price-table tbody tr:nth-child(2) td:nth-child(4) {
+  background-color: #17C653;
+}
+.price-table tbody tr:nth-child(4) td:nth-child(4) {
+  background-color: #17C653;
+}
+.price-table tbody tr:nth-child(5) td:nth-child(4) {
+  background-color: #17C653;
+}
+.price-table tbody tr:nth-child(9) td:nth-child(4) {
+  background-color: #17C653;
+}
+.price-table tbody tr:nth-child(11) td:nth-child(4) {
+  background-color: #17C653;
+}
+.price-table tbody tr:nth-child(12) td:nth-child(4) {
+  background-color: #17C653;
+}
+.price-table tbody tr:nth-child(5) td:nth-child(1) {
+  background-color: #17C653;
+}
+
+.col {
+  width: 70px;
+  max-width: 80px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tab-name {
   color: #99A1B7;
   font-size: 14px;
   white-space: nowrap;
@@ -29,17 +88,30 @@
   border: none;
   background-color: #13141F;
 }
-.price-table .green {
-  background-color: #17C653;
-  color: white;
+
+.volume-cell {
+  position: relative;
+  padding-left: 8px;
+  z-index: 1;
+  color: #17C653;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: normal;
 }
-.price-table .red {
-  background-color: #F8285A;
-  color: white;
+.volume-cell::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: var(--after-width);
+  z-index: 0;
+  opacity: 0.6;
+  background-color: #7a5e3c;
 }
-.price-table .col-bid-volume {
-  width: 70px;
-  max-width: 80px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+.volume-cell.bid::before {
+  right: 0;
+  left: auto;
+}
+.volume-cell.ask::before {
+  left: 0;
+  right: auto;
 }/*# sourceMappingURL=price.css.map */

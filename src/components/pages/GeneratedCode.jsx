@@ -25,11 +25,11 @@ const Maphatsinh = () => {
           <tbody>
             {Data.map((row, idx) => (
               <tr key={idx}>
-                <td className={row.code}>{row.code}</td>
-                <td className={row.priceData}>{row.priceData}</td>
-                <td className={row.upDown}>{row.upDown}</td>
-                <td className={row.priceOrder}>{row.priceOrder}</td>
-                <td className={row.total}>{row.total}</td>
+                <td className="code">{row.code}</td>
+                <td className="code">{row.priceData}</td>
+                <td className="code">{row.upDown}</td>
+                <td className="priceOrder">{row.priceOrder}</td>
+                <td className="total">{row.total}</td>
               </tr>
             ))}
           </tbody>

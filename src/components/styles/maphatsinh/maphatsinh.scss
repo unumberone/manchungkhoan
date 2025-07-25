@@ -32,8 +32,17 @@
             }
          }
     }
+    .code{
+        color:#17C653;
+      }
+    .priceOrder{
+        color: #F8285A;
     }
-}
+    .total{
+        text-align: right;
+    }
+    }
+    }
 
 tbody tr:nth-child(odd) {
   background-color: #242533 !important;

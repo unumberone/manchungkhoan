@@ -19,38 +19,50 @@ const data = [
   
 ];
 
-// Hàm xác định màu xanh đỏ cho volume
-const getVolumeClass = (value) => (value > 50 ? 'green' : 'red');
 
-// Hàm xác định màu xanh đỏ cho giá (giả sử 1415 là giá chuẩn tham chiếu)
-const getPriceClass = (price, refPrice = 1415) => {
-  if (price > refPrice) return 'green';
-  if (price < refPrice) return 'red';
-  return '';
-};
 
 const PriceTable = () => {
   return (
     <table className="price-table">
-      <thead>
-        <tr>
-          <th className='tab-name col-bid-volume'>Bid Volume</th>
-          <th className='tab-name'>Bid Price</th>
-          <th className='tab-name'>Ask Price</th>
-          <th className='tab-name col-bid-volume'>Ask Volume</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((row, idx) => (
-          <tr key={idx}>
-            <td className={getVolumeClass(row.bidVolume)}>{row.bidVolume}</td>
-            <td className={getPriceClass(row.bidPrice)}>{row.bidPrice.toFixed(1)}</td>
-            <td className={getPriceClass(row.askPrice)}>{row.askPrice.toFixed(1)}</td>
-            <td className={getVolumeClass(row.askVolume)}>{row.askVolume}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+  <thead>
+    <tr>
+      <th className="tab-name col bid-volume">Bid Volume</th>
+      <th className="tab-name">Bid Price</th>
+      <th className="tab-name">Ask Price</th>
+      <th className="tab-name col ask-volume">Ask Volume</th>
+    </tr>
+  </thead>
+  <tbody>
+  {data.map((row, idx) => {
+    const maxBid = Math.max(...data.map(item => item.bidVolume));
+    const maxAsk = Math.max(...data.map(item => item.askVolume));
+
+    const bidPercent = (row.bidVolume / maxBid) * 100;
+    const askPercent = (row.askVolume / maxAsk) * 100;
+
+    return (
+      <tr key={idx}>
+        <td>{row.bidVolume}</td>
+        <td
+          className="volume-cell bid"
+          style={{ "--after-width": `${bidPercent}%` }}
+        >
+          {row.bidPrice.toFixed(1)}
+        </td>
+        <td
+          className="volume-cell ask"
+          style={{ "--after-width": `${askPercent}%` }}
+        >
+          {row.askPrice.toFixed(1)}
+        </td>
+        <td>{row.askVolume}</td>
+      </tr>
+    );
+  })}
+</tbody>
+
+</table>
+
   );
 };
 

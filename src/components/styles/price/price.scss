@@ -15,11 +15,43 @@
   height: 406px;
   line-height: 27px;
 
-  th,
+  th{
+    background-color: #13141F;
+  }
   td {
     padding: 2px;
     border: 1px solid #13141F;
-    background-color: #13141F;
+    background-color: #24253C;   
+    }
+      @each $i in 3, 6, 7, 8, 10, 13, 14 { //sử dụng vòng lặp trong scss, nó sẽ lặp qua các phần tử ở vị trí chỉ định 
+      tbody tr:nth-child(#{$i}) td:nth-child(4) { //nhúng giá trị biến $i vào chuỗi selector trong scss qua cột số 4 
+        background-color: #F8285A; 
+      }
+    }
+
+      tbody tr:nth-child(1) td:nth-child(1),
+      tbody tr:nth-child(9) td:nth-child(1) {
+      background-color: #F8285A;
+    }
+
+    @each $i in 1, 2, 4, 5, 9, 11, 12 { //sử dụng vòng lặp trong scss nó sẽ lặp qua các phần tử sau đó nhúng biến giá trị vào chuỗi qua cột số 4
+      tbody tr:nth-child(#{$i}) td:nth-child(4) {
+        background-color: #17C653;
+      }
+    }
+
+      tbody tr:nth-child(5) td:nth-child(1)
+      {
+      background-color: #17C653;
+      }
+  }
+
+  .col {
+    width: 70px; // điều chỉnh độ dài của column
+    max-width: 80px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
   }
 
   .tab-name {
@@ -30,21 +62,34 @@
     border: none;
     background-color: #13141F;
   }
+  .volume-cell {
+  position: relative;
+  padding-left: 8px;
+  z-index: 1;
+  color: #17C653;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: normal;
 
-  .green {
-    background-color: #17C653;
-    color: white;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: var(--after-width);
+    z-index: 0;
+    opacity: 0.6; 
+    background-color: #7a5e3c; 
   }
 
-  .red {
-    background-color: #F8285A;
-    color: white;
+  &.bid::before {
+    right: 0;       // bắt đầu từ bên phải
+    left: auto;     // override left mặc định nếu có
   }
 
-  .col-bid-volume {
-    width: 70px; // điều chỉnh độ dài của column
-    max-width: 80px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  &.ask::before {
+    left: 0;        // bắt đầu từ bên trái
+    right: auto;    // override right nếu có
   }
 }
+
+
