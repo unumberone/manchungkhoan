@@ -1,50 +1,75 @@
-.table-data{
-    gap: 8px;
-    justify-content: space-between;
-    height: 406px;
-    line-height: 25px;
+.table-data {
+  gap: 8px;
+  justify-content: space-between;
+  height: 406px;
+  line-height: 25px;
 
-    .tab-name{
-        padding: 8px 20px;
-        text-align: start;
-        gap: 14px;
-        width: 26%;
+  .tab-name {
+    padding: 8px 20px;
+    text-align: start;
+    gap: 14px;
+    width: 26%;
+    font-weight: 500;
+    font-size: 14px;
+    color: #99A1B7;
+
+      &.right{
+            text-align: right;
+            padding-right: 20px;
+            }
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+
+    thead {
+      th {
         font-weight: 500;
         font-size: 14px;
         color: #99A1B7;
-    }
-
-    table{
-        border-collapse: collapse;
-        text-align: left;
-
-         tbody{
-            font-size: 14px;
-            font-style: 500;
-            color: #ffffff;
-            justify-content: space-between;
-
-         tr{
-            th,td{
-            padding: 12px;
-            font-weight: normal;
-            text-align: right;
-            }
-         }
-    }
-    .code{
-        color:#17C653;
+        
       }
-    .priceOrder{
-        color: #F8285A;
     }
-    .total{
-        text-align: right;
-    }
-    }
-    }
+    tbody {
+      font-size: 14px;
+      font-weight: 500;
+      color: #ffffff;
 
+      tr {
+        th,
+        td {
+          padding: 12px;
+          text-align: right; 
+        }
+
+        td.code {
+          color: #17C653;
+        }
+
+        td.priceOrder {
+          color: #F8285A;
+          padding-right: 20px; 
+        }
+
+        td.total {
+          text-align: right;
+          padding-right: 20px; 
+        }
+
+        td:nth-child(2) {
+          padding-right: 20px;
+        }
+
+        td:nth-child(3) {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+// Màu nền xen kẽ
 tbody tr:nth-child(odd) {
   background-color: #242533 !important;
 }
-

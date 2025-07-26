@@ -4,7 +4,7 @@ import Main from '../Main/Main'
 import CurrentAsset from '../pages/Taisan'
 import Gia from '../pages/Price'
 import LichSu from '../pages/history'
-import MaPhatSinh from '../pages/GeneratedCode'
+import MaPhatSinh from '../pages/maphatsinh'
 
 const Router = () => {
   return (

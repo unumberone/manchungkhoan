@@ -1,12 +1,10 @@
 .table-history {
-  gap: 12px;
-  justify-content: space-between;
-  text-align: center;
+  width: 100%;
   table-layout: fixed;
-  width: 95%;
   border-spacing: 0 12px;
-  height: 406px;
-  line-height: 23px;
+  line-height: 6px;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
 }
 .table-history .green--color {
   color: #17C653;
@@ -16,20 +14,75 @@
 }
 .table-history .tab-name {
   white-space: nowrap;
-  text-align: center;
   font-weight: normal;
   font-size: 12px;
   color: #99A1B7;
 }
-.table-history .tab-name th, .table-history .tab-name td {
-  padding: 10px;
+.table-history thead th {
+  padding: 6px 10px;
+  font-size: 12px;
 }
 .table-history tbody {
+  display: block;
+  max-height: 432px;
+  overflow-y: auto;
   font-size: 14px;
   font-style: medium;
   color: #FFFFFF;
+  /* Custom Scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #555 #1f1f1f;
+}
+.table-history tbody::-webkit-scrollbar {
+  width: 2px;
+  opacity: 0.1;
+}
+.table-history tbody::-webkit-scrollbar-track {
+  background: #1f1f1f;
+  border-radius: 1px;
+}
+.table-history tbody::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+  border: 1px solid #13141F;
+}
+.table-history tbody tr:nth-child(odd) {
+  background-color: #242533;
+}
+.table-history thead {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.table-history tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.table-history td, .table-history th {
+  padding: 10px;
+  vertical-align: middle;
+}
+.table-history td:first-child, .table-history th:first-child {
+  text-align: left;
+  padding-left: 2px;
+}
+.table-history td:nth-child(2), .table-history th:nth-child(2) {
+  text-align: right;
+  padding-left: 0;
+}
+.table-history td:nth-child(3), .table-history th:nth-child(3) {
+  text-align: left;
+  padding-left: 48px;
+}
+.table-history td:nth-child(4), .table-history th:nth-child(4),
+.table-history td:nth-child(5), .table-history th:nth-child(5) {
+  text-align: right;
+  padding-right: 6px;
 }
 
-tbody tr:nth-child(odd) {
-  background-color: #242533 !important;
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=history.css.map */

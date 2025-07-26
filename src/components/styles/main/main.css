@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .main-container {
   display: flex;
   height: 95vh;
@@ -8,18 +9,93 @@
   margin-left: 10px;
 }
 
+.left-panel-high {
+  display: flex;
+  flex-direction: row; /* mặc định là row, nên có thể không cần ghi */
+  align-items: flex-start;
+  position: relative;
+}
+
 .left-panel {
   background-color: #000000;
   margin-bottom: 6px;
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
   min-width: 0;
 }
 .left-panel .chart-container {
-  width: 1130px;
+  flex: 1;
   height: 570px;
+  min-width: 0;
+}
+.left-panel .center-panel {
+  height: 548px;
+  width: 400px;
+  margin-top: 10px;
+  margin-right: 10px;
+  background-color: #13141F;
+  z-index: 1;
+}
+.left-panel .asset-tabs {
+  display: flex;
+  border-bottom: 1px solid #23243a;
+  background: #13141F;
+}
+.left-panel .asset-tabs .asset-tab {
+  flex: 1;
+  white-space: nowrap;
+  padding: 12px;
+  text-align: center;
+  color: #99A1B7;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+.left-panel .asset-tabs .asset-tab.active {
+  color: #fff;
+  border-bottom: 2px solid #6142FE;
+  background: #23243a;
+  color: #7b61ff;
+}
+.left-panel .asset-tabs .asset-tab:hover {
+  color: #fff;
+}
+.left-panel .asset-content {
+  padding: 10px;
+  max-height: auto;
+}
+.left-panel .asset-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px;
+  border-bottom: 1px solid #333;
+  font-size: 14px;
+  border-bottom: none !important;
+}
+.left-panel .asset-row:last-child {
+  border-bottom: none;
+}
+.left-panel .asset-row .asset-label {
+  font-family: "BT Beau Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  color: #99A1B7;
+  line-height: 27px;
+  letter-spacing: 0;
+  vertical-align: middle;
+}
+.left-panel .asset-row .asset-value {
+  color: #fff;
+  font-weight: 500;
+  text-align: right;
+}
+.left-panel .asset-row .asset-value.positive {
+  color: #00ff88;
 }
 
 .order-section {
@@ -28,7 +104,7 @@
   flex-direction: column;
   border: none;
   width: 1528px;
-  height: 345px;
+  height: 333px;
 }
 
 .thead {
@@ -155,77 +231,6 @@
   color: #FFFFFF;
 }
 
-.center-panel {
-  position: absolute;
-  right: 360px;
-  width: 400px;
-  margin-top: 10px;
-  background-color: #13141F;
-  z-index: 1;
-}
-
-.asset-tabs {
-  display: flex;
-  border-bottom: 1px solid #23243a;
-  background: #13141F;
-}
-.asset-tabs .asset-tab {
-  flex: 1;
-  white-space: nowrap;
-  padding: 12px;
-  text-align: center;
-  color: #99A1B7;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-}
-.asset-tabs .asset-tab.active {
-  color: #fff;
-  border-bottom: 2px solid #6142FE;
-  background: #23243a;
-  color: #7b61ff;
-}
-.asset-tabs .asset-tab:hover {
-  color: #fff;
-}
-
-.asset-content {
-  padding: 10px;
-  max-height: auto;
-}
-
-.asset-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4px;
-  border-bottom: 1px solid #333;
-  font-size: 14px;
-  border-bottom: none !important;
-}
-.asset-row:last-child {
-  border-bottom: none;
-}
-.asset-row .asset-label {
-  font-family: "BT Beau Sans", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 14px;
-  color: #99A1B7;
-  line-height: 27px;
-  letter-spacing: 0;
-  vertical-align: middle;
-}
-.asset-row .asset-value {
-  color: #fff;
-  font-weight: 500;
-  text-align: right;
-}
-.asset-row .asset-value.positive {
-  color: #00ff88;
-}
-
 .right-panel {
   background-color: #05060F;
   flex: 1;
@@ -237,7 +242,7 @@
   border-radius: 4px;
   height: 100%;
   display: flex;
-  width: auto;
+  width: 100%;
   background-color: #05060F;
   flex-direction: column;
 }

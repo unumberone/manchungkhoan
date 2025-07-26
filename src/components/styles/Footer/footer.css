@@ -10,7 +10,6 @@
   gap: 12px;
   font-weight: 500;
   margin-top: auto;
-  flex-direction: row;
 }
 @media (max-width: 768px) {
   .footer {

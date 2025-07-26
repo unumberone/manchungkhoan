@@ -37,7 +37,7 @@ const PriceTable = () => {
     const maxBid = Math.max(...data.map(item => item.bidVolume));
     const maxAsk = Math.max(...data.map(item => item.askVolume));
 
-    const bidPercent = (row.bidVolume / maxBid) * 100;
+    const bidPercent = ((row.bidVolume ) / maxBid) * 100;
     const askPercent = (row.askVolume / maxAsk) * 100;
 
     return (

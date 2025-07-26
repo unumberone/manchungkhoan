@@ -10,146 +10,33 @@
 }
 
 // LEFT PANEL 
+.left-panel-high {
+  display: flex;
+  flex-direction: row; /* mặc định là row, nên có thể không cần ghi */
+  align-items: flex-start;
+  position: relative;
+}
 .left-panel {
   background-color: #000000;
   margin-bottom: 6px;
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
   min-width: 0; 
 
   .chart-container{
-    width: 1130px;
+    flex: 1;
     height: 570px;  
+    min-width: 0;
   }
-}
-//css các phần tử có trong ô danh sách các lệnh
-.order-section {
-  background: #13141F;
-  display: flex;
-  flex-direction: column;
-  border: none;
-  width: 1528px;
-  height: 345px;
-}
 
-.thead{
-  background-color: #13141F;
-}
-
-.order-tabs {
-  display: flex;
-  border-bottom: 1px solid #13141F;
-  background-color: #13141F;
-  
-}
-
-.order-tabs button {
-  background: none;
-  border: none;
-  color: #99A1B7;
-  font-weight: 500;
-  padding: 14px;
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.2s;
-  border-bottom: 2px solid transparent;
-}
-
-.order-tabs button.active {
-  color: #fff;
-  border-bottom: 2px solid #6142FE;
-  background: #23243a;
-  color: #7b61ff;
-}
-
-.order-table-container {
-  flex: 1;
-  overflow-y: auto;
-  background: #13141F;
-  height: 100px;
-}
-
-.order-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 12px;
-}
-
-.order-table th,
-.order-table td {
-  padding: 8px 12px;
-  text-align: left;
-  border-bottom: 1px solid #23243a;
-  white-space: nowrap;
-
-}
-
-.order-table th {
-  background: #13141f;
-  color: #99A1B7;
-  font-weight: 500;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-
-}
-
-.order-table .link {
-  color: #6142FE;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.order-table .green {
-  color: #17C653;
-  font-weight: 500;
-}
-
-.order-table .red {
-  color: #F8285A;
-  font-weight: 500;
-}
-
-.order-table .actions {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.edit-btn{
-  color: #1B84FF;
-}
-.delete-btn{
-  color: #F8285A;
-}
-
-.order-table .edit-btn,
-.order-table .delete-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-  border-radius: 4px;
-  transition: all 0.2s;
-}
-
-  .cho-khop { color: #F6B100; }
-  .khop-het { color: #17C653; }
-  .Cho-gui-len-So { color: #FF6F1E; }
-  .khop-1-phan { color: #1B84FF; }
-  .lenh-da-bi-huy { color: #F8285A; }
-  .mac-dinh { color: #FFFFFF; }
-
-
-// Ô trung tâm hiển thị thông tin tài sản
+  // Ô trung tâm hiển thị thông tin tài sản
 .center-panel {
-  position: absolute;
-  right: 360px; 
+  height: 548px;
   width: 400px;
   margin-top: 10px;
+  margin-right: 10px;
   background-color: #13141F;
   z-index: 1;
 }
@@ -223,7 +110,129 @@
     } 
   }
 }
-// RIGHT PANEL - Form hiển thị lệnh xác định giao dịch
+}
+
+//css các phần tử có trong ô danh sách các lệnh
+.order-section {
+  background: #13141F;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  width: 1528px;
+  height: 333px;
+}
+
+.thead{
+  background-color: #13141F;
+}
+
+.order-tabs {
+  display: flex;
+  border-bottom: 1px solid #13141F;
+  background-color: #13141F;
+  
+}
+
+.order-tabs button {
+  background: none;
+  border: none;
+  color: #99A1B7;
+  font-weight: 500;
+  padding: 14px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 2px solid transparent;
+}
+
+.order-tabs button.active {
+  color: #fff;
+  border-bottom: 2px solid #6142FE;
+  background: #23243a;
+  color: #7b61ff;
+}
+
+.order-table-container {
+  flex: 1;
+  overflow-y: auto;
+  background: #13141F;
+  height: 100px;
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.order-table th,
+.order-table td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #23243a;
+  white-space: nowrap;
+
+}
+
+.order-table th {
+  background: #13141f;
+  color: #99A1B7;
+  font-weight: 500;
+  position: sticky;
+  top: 0;
+ z-index: 10;
+
+}
+
+.order-table .link {
+  color: #6142FE;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.order-table .green {
+  color: #17C653;
+  font-weight: 500;
+}
+
+.order-table .red {
+  color: #F8285A;
+  font-weight: 500;
+}
+
+.order-table .actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.edit-btn{
+  color: #1B84FF;
+}
+.delete-btn{
+  color: #F8285A;
+}
+
+.order-table .edit-btn,
+.order-table .delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+  .cho-khop { color: #F6B100; }
+  .khop-het { color: #17C653; }
+  .Cho-gui-len-So { color: #FF6F1E; }
+  .khop-1-phan { color: #1B84FF; }
+  .lenh-da-bi-huy { color: #F8285A; }
+  .mac-dinh { color: #FFFFFF; }
+
+// RIGHT PANEL 
+//Form hiển thị lệnh xác định giao dịch
 .right-panel {
   background-color: #05060F;
   flex: 1;
@@ -236,7 +245,7 @@
   border-radius: 4px;
   height: 100%;
   display: flex;
-  width: auto;
+  width: 100%;
   background-color: #05060F;
   flex-direction: column;
 }

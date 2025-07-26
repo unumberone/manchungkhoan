@@ -5,6 +5,8 @@ import '../styles/main/main.scss';
 import data from '../../assets/data/context.json'
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { PiPencilSimpleLine } from "react-icons/pi";
+import { AiOutlineFullscreenExit } from "react-icons/ai"; 
+import extend from "../../../src/assets/image/Vector2.svg"
 
 const tab2 = [
   { label: 'Tài sản', path: '/tai-san' },
@@ -52,6 +54,7 @@ const Main = () => {
     <div className="main-container">
       {/* LEFT PANEL - Chart */}
       <div className="left-panel">
+        <div className='left-panel-high'>
         <div className="chart-container">
           <iframe
             src="https://streamprs.tvsi.com.vn:5000/chart?symbol=BVH"
@@ -59,9 +62,30 @@ const Main = () => {
             style={{ height: "100%", width: "100%", border: "unset" }}
           ></iframe>
         </div>
+        {/* CENTER PANEL - Asset Information */}
+        <div className="center-panel">
+        <div className="asset-tabs">
+        {tab2.map((menu, idx) => (
+          <div
+            key={idx}
+            onClick={() => navigate(menu.path)}
+            className={`asset-tab${
+              location.pathname === menu.path ? " active" : ""
+            }`}
+          >
+            {menu.label}
+          </div>
+        ))}
+          </div>
+        <div className="asset-content">
+          <Outlet />
+        </div>
+        </div>
+        </div>
 
         {/* Order list section */}
-        <div className="order-section">
+        <div className="right-panel-low">
+           <div className="order-section">
           <div className="order-tabs">
             <button
               type="button"
@@ -77,6 +101,7 @@ const Main = () => {
             >
               Danh sách lệnh điều kiện
             </button>
+            
           </div>
           {/*form hiển thị các lệnh đã đặt */}
           <div className="order-table-container">
@@ -145,24 +170,6 @@ const Main = () => {
               </tbody>
             </table>
           </div>
-        </div>
-        {/* CENTER PANEL - Asset Information */}
-        <div className="center-panel">
-        <div className="asset-tabs">
-        {tab2.map((menu, idx) => (
-          <div
-            key={idx}
-            onClick={() => navigate(menu.path)}
-            className={`asset-tab${
-              location.pathname === menu.path ? " active" : ""
-            }`}
-          >
-            {menu.label}
-          </div>
-        ))}
-          </div>
-        <div className="asset-content">
-          <Outlet />
         </div>
         </div>
         </div>
