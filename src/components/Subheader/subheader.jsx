@@ -100,6 +100,9 @@ const MarketStats = () => {
         <div className="TC">T/C
           <div className="cell highlight-orange">1,050.0</div>
         </div>
+        <div className="gia-khop">Giá khớp
+            <div className="cell highlight-orange">1,050.0</div>
+        </div>
         <div className="KL-khop">KL Khớp
           <div className="cell">--</div>
         </div>

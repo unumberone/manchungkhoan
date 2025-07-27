@@ -9,7 +9,6 @@
   font-size: 12px;
   gap: 12px;
   font-weight: 500;
-  margin-top: auto;
 }
 @media (max-width: 768px) {
   .footer {

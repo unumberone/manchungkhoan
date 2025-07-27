@@ -114,49 +114,6 @@
   color: #aaa;
   margin-bottom: 2px;
 }
-
-.stock-row {
-  flex-wrap: wrap;
-  padding: 10px 16px;
-  background-color: #181925;
-  color: #dcdcdc;
-  font-size: 13px;
-  border-radius: none;
-  margin-top: 10px;
-  gap: 16px;
-  width: 100%;
-}
-
-.stock-row .cell {
-  min-width: 80px;
-  padding: 2px 6px;
-  text-align:start;
-  white-space: nowrap;
-  display: flex;
-  border-radius: 4px;
-  margin-top: 2px;
-  font-weight: 500;
-}
-.stock-row .code {
-  font-weight: 500;
-}
-.stock-row .MSCP {
-  color: #ffc107;
-  font-weight: 600;
-}
-.stock-row .highlight-purple {
-  color: #9c6eff;
-  font-weight: 600;
-}
-.stock-row .highlight-blue {
-  color: #4dd0e1;
-  font-weight: 600;
-}
-.stock-row .highlight-orange {
-  color: #ffb74d;
-  font-weight: 600;
-}
-  overflow-x: auto;
 }
 
 .market-card {
@@ -171,110 +128,39 @@
   flex-direction: column;
   justify-content: center;
   box-shadow: 0 0 4px rgba(68, 64, 64, 0.3);
-
-  .row {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    height: 100%;
-  }
-
-  .left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    flex: 1;
-    gap: 12px;
-    padding: 10px;
-    .name {
-      font-weight: 600;
-      font-size: 14px;
-      color: #cfcfcf;
-    }
-    .volume {
-      font-size: 13px;
-      color: #aaa;
-    }
-    .stats {
-      display: flex;
-      gap: 8px;
-      font-weight: 600;
-      font-size: 13px;
-      .up { color: #17C653; }
-      .nochange { color: #F6B100; }
-      .down { color: #ff4d4f; }
-      span {
-        display: flex;
-        align-items: center;
-       
-      }
-    }
-  }
-
-  .right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  flex: 1;
-  gap: 12px;
-  padding: 10px;
-
-  .value-change {
-    font-weight: 400;
-    font-size: 12px;
-    margin-bottom: 2px;
-    &.green { color: #24d164; }
-    &.red { color: #ff4d4f; }
-    &.gray { color: #888; }
-    span {
-      font-weight: 400;
-      font-size: 12px;
-      margin-left: 4px;
-    }
-  }
-
-  .value-trade, .waiting {
-    font-size: 12px;
-    color: #aaa;
-    margin-bottom: 2px;
-  }
-}
 }
 .stock-row {
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  padding: 10px 16px;
+  align-items: center;
+  justify-content: flex-start;
   background-color: #181925;
   color: #dcdcdc;
   font-size: 13px;
-  border-radius: none;
+  padding: 10px 12px;
+  gap: 60px;
+  overflow-x: auto;
   margin-top: 10px;
-  gap: 16px;
+  margin-left: 8px;
 
   > div {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    min-width: 90px;
-    margin-right: 8px;
-    margin-bottom: 4px;
-    flex: 1 1 90px;
+    justify-content: center;
+    align-items: flex-start; // tiêu đề căn trái
+    min-width: 85px;
+    max-width: 100px;
     white-space: nowrap;
   }
 
   .cell {
-    min-width: 80px;
-    padding: 2px 6px;
+    margin-top: 4px;
+    padding: 2px 0px;
     text-align: center;
     white-space: nowrap;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 4px;
-    margin-top: 2px;
     font-weight: 500;
   }
 

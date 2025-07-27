@@ -1,7 +1,7 @@
 @charset "UTF-8";
 .main-container {
   display: flex;
-  height: 95vh;
+  height: 91vh;
   width: auto;
   background-color: #000000;
   color: #fff;
@@ -104,7 +104,8 @@
   flex-direction: column;
   border: none;
   width: 1528px;
-  height: 333px;
+  height: 290px;
+  max-width: 100%;
 }
 
 .thead {
@@ -146,6 +147,7 @@
 
 .order-table {
   width: 100%;
+  max-width: 100%;
   border-collapse: collapse;
   font-size: 12px;
 }
@@ -165,6 +167,7 @@
   position: sticky;
   top: 0;
   z-index: 10;
+  max-width: 200px;
 }
 
 .order-table .link {
@@ -236,6 +239,7 @@
   flex: 1;
   margin-top: 10px;
   max-width: 350px;
+  height: 98%;
 }
 
 .trading-form {
