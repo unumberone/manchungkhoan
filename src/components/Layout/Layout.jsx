@@ -7,11 +7,11 @@ import Footer from './../Footer/footer'
 
 const Layout = () => {
   return (
-    <div className="layout-wrapper"> {/* ✨ Thêm class wrapper */}
+    <div className="layout-wrapper"> 
       <Header />
       <Subheader />
       
-      <main className="main-content"> {/* ✨ Đẩy phần nội dung */}
+      <main className="main-content"> 
         <Router />
       </main>
 
