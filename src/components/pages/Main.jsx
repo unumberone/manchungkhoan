@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate, useLocation, Outlet } from 'react-router-dom';
+import Subheader from '../pages/subheader'
 import '../pages/Price'
 import '../styles/main/main.scss';
 import data from '../../assets/data/context.json'
@@ -51,6 +52,8 @@ const Main = () => {
 
 
   return (
+    <>
+    <Subheader />
     <div className="main-container">
       {/* LEFT PANEL - Chart */}
       <div className="left-panel">
@@ -278,6 +281,7 @@ const Main = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

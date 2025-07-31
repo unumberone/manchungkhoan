@@ -54,7 +54,7 @@ const indexData = [
   }
 ];
 
-const MarketStats = () => {
+const subheader = () => {
   return (
     <div className="container">
       <div className="market-stats">
@@ -128,4 +128,4 @@ const MarketStats = () => {
   );
 };
 
-export default MarketStats;
+export default subheader;

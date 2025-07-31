@@ -58,6 +58,8 @@
   font-weight: 500;
   text-align: right;
   margin-right: 10px;
+  margin-bottom: 0;
+  margin-top: 2px;
 }
 .right-section .account-controls {
   display: flex;
@@ -94,6 +96,9 @@
   background: #020202;
   color: #020202;
   cursor: pointer;
+}
+.right-section .edit-btn, .right-section .delete-btn {
+  background-color: #13141F;
 }
 
 @media (max-width: 1440px) {

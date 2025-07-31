@@ -3,10 +3,9 @@
   gap: 12px;
   padding: 2px;
   width: 100%;
-  margin-top: 10px;
   background-color: #000000;
   overflow-x: auto;
-  margin-left: 6px;
+  margin-top: 10px;
 }
 .market-stats .market-card {
   background-color: #13141F;
@@ -139,7 +138,6 @@
   gap: 60px;
   overflow-x: auto;
   margin-top: 10px;
-  margin-left: 8px;
 }
 .stock-row > div {
   display: flex;

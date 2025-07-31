@@ -64,6 +64,8 @@
     font-weight: 500;
     text-align: right;
     margin-right: 10px;
+    margin-bottom: 0;
+      margin-top: 2px;
   }
 
   .account-controls {
@@ -102,6 +104,10 @@
     background: #020202;
     color: #020202;
     cursor: pointer;
+  }
+
+  .edit-btn, .delete-btn{
+    background-color: #13141F;
   }
 }
 
