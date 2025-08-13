@@ -21,8 +21,6 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  
-
 
   return (
     <header className="header">

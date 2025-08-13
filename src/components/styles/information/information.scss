@@ -1,0 +1,211 @@
+.info{
+    background-color:#23243a ;
+}
+
+button-btn {
+    flex: 1;
+    padding: 12px 20px;
+    border: 3px;
+    background-color: #1E1E25;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+    color: #fff;
+    border-bottom: 2px solid transparent;
+    
+    
+    &.active { 
+      color: #fff;
+      border-bottom: 2px solid #6142FE;
+      background: #23243a;
+      color: #7b61ff;
+    }
+    
+  }
+
+  .panel {
+  margin-top: 20px;
+  width: 600px;
+  height: 480px;
+  line-height: 30px;
+}
+.panel-note {
+  font-size: 12px;
+  color: #9aa0b6;
+  margin-bottom: 12px;
+}
+
+/* card thông tin */
+.info-card {
+  background: #141527;
+  border-radius: 12px;
+  padding: 16px;
+  width: 600px;
+  height: 480px;
+  line-height: 30px;
+}
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 32px;
+}
+.cell .label {
+  font-size: 12px;
+  color: #9aa0b6;
+  margin-bottom: 6px;
+}
+.cell .value {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* form đổi mật khẩu */
+.fields {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  background: #000000  ;
+  padding: 16px;
+  height: 480px;
+  border-radius: 12px;
+}
+.field label {
+  display: block;
+  font-size: 12px;
+  color: #9aa0b6;
+  margin-bottom: 6px;
+  margin-left: 100px;
+}
+.field input {
+  background: #0f1020;
+  color: #fff;
+  border: 1px solid #2f3352;
+  border-radius: 10px;
+  padding: 10px 12px;
+  outline: none;
+  margin-left: 100px;
+  width: 300px;
+}
+.field input:focus {
+  border-color: #5a4bff;
+}
+
+/* nút */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* password-checklist.css */
+.pw-checklist {
+  margin: 10px 0 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.rule {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #a0a6be;        /* xám nhạt */
+  font-size: 14px;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 26px;     /* chừa chỗ cho dấu tròn */
+  transition: color 160ms ease;
+  margin-left: 100px;
+}
+
+/* dấu tròn trước mỗi dòng */
+.rule::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #5a5e7a;  /* xám */
+  background: transparent;
+  box-sizing: border-box;
+  transition: all 160ms ease;
+}
+
+/* khi đạt rule -> xanh lá */
+.rule.ok {
+  color: #22c55e;              /* xanh lá */
+}
+.rule.ok::before {
+  border-color: #22c55e;
+  background: #22c55e;
+}
+
+
+/* vùng nút */
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;   /* đổi thành flex-end nếu muốn canh phải */
+  margin-top: 16px;
+}
+
+/* base button */
+.btn {
+  appearance: none;
+  border: 1.5px solid transparent;
+  border-radius: 999px;        /* pill */
+  padding: 10px 18px;
+  min-width: 140px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  color: #ffffff;
+  background: transparent;
+  transition: background 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 60ms ease;
+}
+
+/* ghost = viền tím + nền tối */
+.btn.ghost {
+  --purple: #6a5cff;          /* tím */
+  --ghost-bg: #1a1930;        /* nền tối hơn modal */
+  background: var(--ghost-bg);
+  border-color: var(--purple);
+  box-shadow: inset 0 0 0 1.5px rgba(106, 92, 255, 0.25);
+}
+.btn.ghost:hover {
+  background: #201e3d;
+  box-shadow: inset 0 0 0 2px rgba(106, 92, 255, 0.45);
+}
+.btn.ghost:active {
+  transform: translateY(1px);
+}
+
+/* primary = tím đặc */
+.btn.primary {
+  --purple: #6a5cff;
+  background: var(--purple);
+  border-color: var(--purple);
+  color: #fff;
+}
+.btn.primary:hover {
+  background: #5a4bff;
+  border-color: #5a4bff;
+}
+.btn.primary:active {
+  transform: translateY(1px);
+}
+
+/* focus ring cho cả hai */
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(106, 92, 255, 0.35);
+}
+
+/* trạng thái disabled (nếu cần) */
+.btn:disabled,
+.btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}

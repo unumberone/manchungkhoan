@@ -1,0 +1,102 @@
+
+.search-form .input-field {
+    background-color: #24253C; //css cho màu các form input
+     line-height: 30px;
+    align-items: flex-end; 
+    flex-wrap: wrap;
+}
+
+//css cho phần menu hiển thị dưới phần sao kê tiền
+.section-switcher {
+  display: flex;
+  gap: 18px;
+  background-color: #13141F;
+
+
+  &__item {
+    padding: 12px;
+    font-weight: 500;
+    color: #ccc;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    &--active {
+      color: #6142FE;
+      background: linear-gradient(
+        180deg,rgba(97, 66, 254, 0) 0%, rgba(97, 66, 254, 0.2) 100%
+      );
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #6142FE;
+      }
+    }
+  }
+}
+
+//css cho phần sub title
+.statement-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 900px;
+
+
+  &__card {
+    background-color: #13141f;
+    padding: 16px;
+    border-radius: 8px;
+    color: #ccc;
+  }
+
+  &__group {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+  }
+
+  &__label {
+    font-size: 12px;
+    margin-bottom: 4px;
+    color: #999;
+  }
+
+  &__value {
+    font-size: 14px;
+
+    &--bold {
+      font-weight: bold;
+    }
+
+    &--up {
+      color: #00c853; // xanh
+    }
+
+    &--down {
+      color: #ff5252; // đỏ
+    }
+  }
+}
+
+
+
+
+
+
+

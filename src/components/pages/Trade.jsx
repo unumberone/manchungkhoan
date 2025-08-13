@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Table, Button, Modal, Form, Input, Select, DatePicker } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import '../styles/Trade/trade.scss';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import TransferForm from '../pages/Formpayment'; // 
 
 const { Option } = Select;
@@ -127,7 +127,7 @@ const Trade = () => {
   const showEditModal = (item) => {
     form.setFieldsValue({
       ...item,
-      date: item.date ? moment(item.date, 'DD/MM/YYYY, HH:mm') : null
+      date: item.date ? dayjs(item.date, 'DD/MM/YYYY') : null
     });
     setEditingItem(item);
     setIsModalOpen(true);
@@ -228,7 +228,7 @@ const Trade = () => {
         </div>
 
         <div className="form-group">
-          <button className="search-btn">Tìm kiếm</button>
+          <button className="search-button">Tìm kiếm</button>
         </div>
       </div>
 

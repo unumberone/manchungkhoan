@@ -212,3 +212,29 @@ input[type="checkbox"] {
 }
 
 
+//search btn
+.search-button {
+  background: transparent;
+  border: 1px solid #6142FE;
+  color: #ffffff;
+  font-weight: 500;
+  border-radius: 100px;
+  padding: 0 20px;
+  height: 55px;
+  line-height: 1;
+  transition: all 0.3s ease;
+  box-shadow: none;
+  margin-top: 25px;
+
+  &:hover,
+  &:focus {
+    background-color: #6142fe;
+  }
+
+  &:active {
+    background-color: #4c32d4;
+    border-color: #4c32d4;
+  }
+}
+
+

@@ -1,1 +1,76 @@
-/*# sourceMappingURL=bankStatement.css.map */
+.search-form .input-field {
+  background-color: #24253C;
+  line-height: 30px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.section-switcher {
+  display: flex;
+  gap: 18px;
+  background-color: #13141F;
+}
+.section-switcher__item {
+  padding: 12px;
+  font-weight: 500;
+  color: #ccc;
+  cursor: pointer;
+  position: relative;
+}
+.section-switcher__item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.section-switcher__item--active {
+  color: #6142FE;
+  background: linear-gradient(180deg, rgba(97, 66, 254, 0) 0%, rgba(97, 66, 254, 0.2) 100%);
+}
+.section-switcher__item--active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #6142FE;
+}
+
+.statement-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 900px;
+}
+.statement-summary__card {
+  background-color: #13141f;
+  padding: 16px;
+  border-radius: 8px;
+  color: #ccc;
+}
+.statement-summary__group {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+.statement-summary__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+.statement-summary__label {
+  font-size: 12px;
+  margin-bottom: 4px;
+  color: #999;
+}
+.statement-summary__value {
+  font-size: 14px;
+}
+.statement-summary__value--bold {
+  font-weight: bold;
+}
+.statement-summary__value--up {
+  color: #00c853;
+}
+.statement-summary__value--down {
+  color: #ff5252;
+}/*# sourceMappingURL=bankStatement.css.map */

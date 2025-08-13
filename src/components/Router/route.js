@@ -9,6 +9,7 @@ import MaPhatSinh from '../pages/maphatsinh'
 import Payment from '../pages/Formpayment'
 import BankStatement from '../pages/bankStatement'
 import AssetCategory from '../pages/assetCategory'
+import Information from '../pages/information'
 
 const Router = () => {
   return (
@@ -31,14 +32,8 @@ const Router = () => {
   <Route path="/sao-ke-tien" element={<BankStatement />} />
   <Route path="/danh-muc-tai-san" element={<AssetCategory />} />
   <Route path="/chuyen-tien" element={<Trade />} />
+  <Route path="/thong-tin-tai-khoan" element={<Information />} />
 </Routes>
-
-/*<Route path="/chuyen-khoan" element={<TransferLayout />}>
-  <Route path="ngan-hang" element={<TransferToBank />} />
-  <Route path="noi-bo" element={<TransferInternal />} />
-</Route>
- */
-
   )
 }
 

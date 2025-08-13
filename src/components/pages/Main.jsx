@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate, useLocation, Outlet } from 'react-router-dom';
 import Subheader from '../pages/subheader'
+import {BaseTable} from '../../../src/baseComponents/BaseTable'
 import '../pages/Price'
 import '../styles/main/main.scss';
 import data from '../../assets/data/context.json'

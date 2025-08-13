@@ -1,0 +1,61 @@
+.header--page {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.tab-bar {
+  display: flex;
+  gap: 20px;
+}
+
+.tab {
+  padding: 12px;
+  cursor: pointer;
+  background: transparent;
+  color: #FFFFFF;
+}
+
+.tab.active {
+  background: #3f3fff;
+  color: white;
+}
+
+.summary-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  min-height:28px;         /* chỉnh tuỳ UI */
+  padding:2px 0;
+}
+
+.summary-label{
+  flex:1 1 auto;           /* chiếm phần còn lại bên trái */
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;  /* dài thì "..." */
+  opacity:0.85;            /* giống ảnh */
+}
+
+.summary-value{
+  flex:0 0 auto;
+  font-weight:600;
+  text-align:right;
+  font-variant-numeric: tabular-nums; /* số thẳng cột hơn */
+}
+
+span{
+  color: #99A1B7;
+}
+
+strong{
+  color: #FFFFFF;
+}
+
+
+
