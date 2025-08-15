@@ -117,41 +117,43 @@ const paddedCols = column.map(c => [
           <Option value="VN30FAU2">VN30FAU2</Option>
         </Select>
         </div>
-        <Button type="primary">Tìm kiếm</Button>
+        <div className="actions-search">
+          <button type="button-btn" className="btn ghost" >Tìm kiếm</button>
+         </div>
       </div>
 
-      {/* Tabs */}
-      <div className="tab-bar text" style={{ marginTop: 20, marginBottom: 20 }}>
+      <div className="asset__body">
+          <div className="tab-bar text" style={{ marginTop: 20, marginBottom: 20 }}>
         <span className="tab active">Tài sản và sức mua</span>
         <span className="tab">Số dư chứng khoán</span>
       </div>
 
-      {/* Asset Summary in 4 Columns */}
-     <Row gutter={[1, 6]}>
-  {paddedCols.map((col, colIdx) => (
-    <Col xs={24} md={12} lg={6} key={colIdx}>
-      {col.map((item, i) => (
-        <div className="summary-item" key={i}>
-          {item ? (
-            <>
-              <span className="summary-label" title={item.title}>{item.title}</span>
-              <span className="summary-value">{item.value}</span>
-            </>
-          ) : (
-            // ô đệm giữ thẳng hàng
-            <>
-              <span className="summary-label" style={{ visibility: 'hidden' }}>.</span>
-              <span className="summary-value" style={{ visibility: 'hidden' }}>.</span>
-            </>
-          )}
-        </div>
-      ))}
-    </Col>
-  ))}
-</Row>
+              {/* Asset Summary in 4 Columns */}
+            <Row gutter={[4, 10]}>
+            {paddedCols.map((col, colIdx) => (
+            <Col xs={24} md={12} lg={6} key={colIdx}>
+              {col.map((item, i) => (
+                <div className="summary-item" key={i}>
+                  {item ? (
+                    <>
+                      <span className="summary-label" title={item.title}>{item.title}</span>
+                      <span className="summary-value">{item.value}</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="summary-label" style={{ visibility: 'hidden' }}>.</span>
+                      <span className="summary-value" style={{ visibility: 'hidden' }}>.</span>
+                    </>
+                  )}
+                </div>
+              ))}
+            </Col>
+          ))}
+        </Row>
       {/* Table */}
       <div className="table__section" style={{ marginTop: 24 }}>
         <Table columns={columns} dataSource={tableData} pagination={false} />
+      </div>
       </div>
     </div>
   );

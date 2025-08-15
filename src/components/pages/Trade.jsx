@@ -236,8 +236,8 @@ const Trade = () => {
         <Table
           columns={columns}
           dataSource={data}
-          pagination={false}
           rowKey="key"
+          pagination={false}
         />
       </div>
 

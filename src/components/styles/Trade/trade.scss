@@ -237,4 +237,80 @@ input[type="checkbox"] {
   }
 }
 
+/* Bảng dữ liệu */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 0px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+  font-size: 14px;
+}
+
+tbody tr {
+  background-color: #13141F;
+  border-bottom: 1px solid #2e2f41;
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+
+.ant-table-wrapper .ant-table-thead > tr > th {
+  background-color:  #13141F;
+  color: #99A1B7;
+  border: none;
+  border-right: #000000;
+  padding: 6px 10px;
+}
+
+
+.ant-table-wrapper .ant-table-cell,
+.ant-table-wrapper .ant-table-thead > tr > th,
+.ant-table-wrapper .ant-table-tbody > tr > td {
+  padding: 4px 8px;
+  border-bottom: 1px solid #000000;
+}
+
+.ant-btn.ant-btn-icon-only {
+  width: 32px;
+  padding: 4px ;
+  background-color: #242533;
+}
+
+.container .ant-btn-variant-outlined {
+  background-color: none;
+  border-color: #000000;
+}
+
+.anticon svg {
+  color: #1B84FF;
+}
+
+
+button.delete-btn-trade svg {
+  width: 20px;
+  height: 20px;
+  fill: red;
+}
+
+
+:where(.css-dev-only-do-not-override-7t2xvq).ant-table-wrapper 
+.ant-table-thead > tr > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before,
+:where(.css-dev-only-do-not-override-7t2xvq).ant-table-wrapper 
+.ant-table-thead > tr > td:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+  display: none;
+}
+
+:where(.css-dev-only-do-not-override-7t2xvq).ant-empty-normal .ant-empty-description {
+  color: #ffffff;
+}
+
+:where(.css-dev-only-do-not-override-7t2xvq).ant-table-wrapper .ant-table-tbody>tr.ant-table-placeholder:hover>th,
+:where(.css-dev-only-do-not-override-7t2xvq).ant-table-wrapper .ant-table-tbody>tr.ant-table-placeholder:hover>td,
+:where(.css-dev-only-do-not-override-7t2xvq).ant-table-wrapper .ant-table-tbody>tr.ant-table-placeholder{
+  background-color: #242533 !important;
+}
 

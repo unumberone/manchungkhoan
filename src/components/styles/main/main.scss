@@ -447,6 +447,138 @@
   transform: translateY(-1px);
 }
 
+//modal hiển thị khi click vào lệnh
+.modal__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+}
+
+.modal__panel {
+  width: 620px;
+  max-width: 100%;
+  color: #e7e7ea;
+  background: #0f1120;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .5);
+  overflow: hidden;
+  transform: translateY(8px);
+  opacity: 0;
+  animation: modalIn .18s ease-out forwards;
+}
+
+@keyframes modalIn {
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: linear-gradient(180deg, #1b1d33, #141527);
+  border-bottom: 2px solid #6142FE;
+  background: #23243a;
+  color: #7b61ff;
+
+  h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: .2px;
+    color: #FFFFFF;
+  }
+}
+
+.modal__close {
+  background: transparent;
+  border: 0;
+  color: #c9c9cf;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 8px;
+
+  &:hover { background: rgba(255,255,255,0.06); }
+}
+
+.modal__body {
+  padding: 20px 22px 12px;
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // 3 cột
+    gap: 60px 70px; 
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+
+    .label {
+      color: #9aa0b4;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .value {
+      font-weight: 600;
+      font-size: 14px;
+      color: #ffffff;
+    }
+
+    .txt-long {
+      color: #00ff88;
+    }
+
+    .txt-short {
+      color: #ff4d4f;
+    }
+  }
+}
+
+
+.modal__footer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Buttons inside modal */
+.btn {
+  min-width: 120px;
+  height: 40px;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  background: #2a2d44;
+  color: #e7e7ea;
+  cursor: pointer;
+  transition: filter .15s ease;
+
+  &:hover { filter: brightness(1.05); }
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: #434665;
+  color: #cfd2e6;
+
+  &:hover { background: rgba(255,255,255,0.06); }
+}
+
+.btn--primary {
+  background: #5a4bff;
+
+  &:hover { filter: brightness(1.1); }
+}
+
+
 
 // Responsive 
 
