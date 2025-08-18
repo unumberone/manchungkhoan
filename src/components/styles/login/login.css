@@ -1,0 +1,218 @@
+@charset "UTF-8";
+.login {
+  /* theme colors */
+  --bg: #0f1320;
+  --panel: #171b26;
+  --border: #2a3244;
+  --text: #e5e7eb;
+  --muted: #99a1b7;
+  --primary: #5b5bd6;
+  min-height: 100vh;
+  background: var(--bg);
+  color: #fff;
+  /* <= 1200px */
+  /* <= 1024px: ẩn hình trái, form full width, bỏ divider */
+  /* <= 768px */
+  /* <= 480px */
+}
+.login__split {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+}
+.login__split::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+.login__left {
+  flex: 1 1 55%;
+  overflow: hidden;
+}
+.login__left img {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.login__right {
+  flex: 1 1 45%;
+  max-width: 760px;
+  margin-left: auto;
+  padding: 64px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.login__logo {
+  display: block;
+  width: 300px;
+  margin: 0 auto 28px;
+}
+.login__title {
+  font-size: 24px;
+  font-weight: 700;
+}
+.login .login__form {
+  width: 420px;
+  margin: 0 auto;
+  /* label */
+  /* checkbox + forgot */
+  /* submit button */
+}
+.login .login__form .ant-form-vertical .ant-form-item {
+  margin-bottom: 14px;
+}
+.login .login__form .ant-form-item-label > label {
+  color: #cdd5e1;
+  font-size: 14px;
+  font-weight: 500;
+}
+.login .login__form .ant-input,
+.login .login__form .ant-input-password .ant-input,
+.login .login__form .ant-input-affix-wrapper {
+  background: var(--panel);
+  color: var(--text);
+  border-radius: 28px;
+}
+.login .login__form .ant-input::-moz-placeholder {
+  color: var(--muted);
+}
+.login .login__form .ant-input::placeholder {
+  color: var(--muted);
+}
+.login .login__form .ant-input-affix-wrapper-lg {
+  height: 44px;
+  padding: 0 14px; /* chừa chỗ icon mắt */
+}
+.login .login__form .ant-input-affix-wrapper-focused {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(91, 91, 214, 0.18);
+}
+.login .login__form .login__row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0 16px;
+}
+.login .login__form .login__row .ant-form-item {
+  margin: 0;
+}
+.login .login__form .login__row .link {
+  font-size: 14px;
+  color: #7aa2ff;
+  text-decoration: none;
+}
+.login .login__form .login__row .link:hover {
+  text-decoration: underline;
+}
+.login .login__form .ant-btn {
+  border-radius: 999px;
+  height: 44px;
+  font-weight: 600;
+}
+.login .login__form .ant-btn.ant-btn-primary {
+  background: var(--primary);
+}
+.login__links {
+  position: absolute;
+  bottom: 24px;
+  left: 80px;
+  right: 80px;
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  justify-content: space-between;
+  gap: 24px;
+  white-space: nowrap;
+}
+.login__links a {
+  color: #8aa3d6;
+  font-size: 12px;
+  text-decoration: none;
+}
+.login__links a:hover {
+  text-decoration: underline;
+}
+.login .anticon {
+  display: none;
+}
+@media (max-width: 1440px) {
+  .login__right {
+    padding: 56px 64px;
+  }
+  .login .login__form {
+    width: 400px;
+  }
+  .login__links {
+    left: 64px;
+    right: 64px;
+  }
+}
+@media (max-width: 1200px) {
+  .login__right {
+    padding: 48px 56px;
+  }
+  .login .login__form {
+    width: 380px;
+    margin-left: 0;
+  }
+  .login__links {
+    left: 56px;
+    right: 56px;
+  }
+}
+@media (max-width: 1024px) {
+  .login__left {
+    display: none;
+  }
+  .login__split::after {
+    display: none;
+  }
+  .login__right {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+  .login .login__form {
+    width: 100%;
+  }
+  .login__links {
+    position: static;
+    margin-top: 24px;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    gap: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .login__right {
+    padding: 40px 20px;
+  }
+  .login__title {
+    font-size: 22px;
+  }
+  .login .login__form .login__row {
+    margin: 6px 0 14px;
+  }
+}
+@media (max-width: 480px) {
+  .login__title {
+    font-size: 20px;
+  }
+  .login .login__form .ant-form-item-label > label {
+    font-size: 13px;
+  }
+  .login__links {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    text-align: left;
+  }
+}/*# sourceMappingURL=login.css.map */

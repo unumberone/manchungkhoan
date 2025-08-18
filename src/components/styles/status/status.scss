@@ -1,0 +1,30 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000000;
+}
+
+.modal {
+  background: #13141F;
+  border-radius: 16px;
+  padding: 80px 24px;
+  width: 560px;
+  text-align: center;
+  color: #fff;
+}
+
+.status-footer {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 54px;
+}
+
+
+
+
+

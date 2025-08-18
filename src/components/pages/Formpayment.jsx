@@ -2,7 +2,8 @@ import React, { useState, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { BaseDropdownBank } from "../../../src/baseComponents/BaseDropdownBank";
 import '../styles/payment/payment.scss';
-// import StatusPayment from '../pages/StatusPayment'; // <- chưa dùng, tránh ESLint
+import Status from '../pages/Status'; 
+
 
 import Vietcombank from '../../../src/assets/image/vietcombank.svg';
 import Agribank from '../../../src/assets/image/agribank.svg';
@@ -153,17 +154,21 @@ const TransferForm = ({ onCancel, onSuccess }) => {
   const handleCloseConfirm = () => setShowConfirm(false);
 
   const handleConfirm = async () => {
-    // xác nhận trên modal => thực hiện giao dịch
-    try {
-      // call API thật ở đây
-      await new Promise((r) => setTimeout(r, 1));
-      setShowConfirm(false);
-      onSuccess?.();
-    } catch (err) {
-      console.error('Lỗi khi thực hiện giao dịch:', err);
-      alert('Có lỗi xảy ra khi chuyển tiền');
-    }
-  };
+  try {
+    await new Promise((r) => setTimeout(r, 500)); // giả lập API
+    setShowConfirm(false);
+
+    // random trạng thái
+    const list = ["SUCCESS", "ERROR", "WARNING"];
+    const pick = list[Math.floor(Math.random() * list.length)];
+    setModal(pick);
+  } catch (err) {
+    console.error('Lỗi khi thực hiện giao dịch:', err);
+    setShowConfirm(false);
+    setModal("ERROR");
+  }
+};
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -209,6 +214,11 @@ const TransferForm = ({ onCancel, onSuccess }) => {
     () => bankOptions.find((b) => b.value === formData.bank),
     [formData.bank]
   );
+
+  //xử lí trạng thái modal
+   const [modal, setModal] = useState("none");
+
+   
 
   return (
     <div className="modal-overlay" onClick={onCancel}>
@@ -414,6 +424,15 @@ const TransferForm = ({ onCancel, onSuccess }) => {
           content: formData.content,
         }}
       />
+
+      {["SUCCESS", "ERROR", "WARNING"].includes(modal) && (
+        <Status
+          open
+          type={modal}                     // "SUCCESS" | "ERROR" | "WARNING"
+          onPrimary={() => setModal("none")}
+          onSecondary={() => setModal("none")}
+        />
+      )}
     </div>
   );
 };

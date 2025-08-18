@@ -49,12 +49,17 @@ const Information = ({ onClose, onSubmit, password, prevPasswords }) => {
     return { notInLast3, lengthOK, hasUpperLower, hasDigit, hasSpecial };
   }, [pwd, history]);
 
+
   
 
   const [open, setOpen] = useState(false);
 
    const navigate = useNavigate();      
-   const allOk = Object.values(rules).every(Boolean); 
+   const allOk = Object.values(rules).every(Boolean) && (() => {
+    alert("Cập nhật mật khẩu thành công và back về trang đầu");
+    onClose?.();
+    return true;
+    })();
 
 
     const handleSubmit = (e) => {
