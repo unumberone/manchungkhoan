@@ -41,7 +41,7 @@ const Information = ({ onClose, onSubmit, password, prevPasswords }) => {
   const rules = useMemo(() => {
     const last3 = history.slice(0, 3).filter(Boolean).map(String);
     const notInLast3 = pwd.length > 0 && !last3.includes(pwd);
-    const lengthOK = pwd.length >= 6 && pwd.length <= 1000000000;
+    const lengthOK = pwd.length >= 6 && pwd.length <= 300;
     const hasUpperLower = /[A-Z]/.test(pwd) && /[a-z]/.test(pwd);
     const hasDigit = /\d/.test(pwd);
     const hasSpecial = /[^A-Za-z0-9]/.test(pwd);

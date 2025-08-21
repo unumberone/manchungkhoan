@@ -1,4 +1,5 @@
 .container {
+
   .header-section {
     display: flex;
     justify-content: space-between;
@@ -7,13 +8,11 @@
     margin-bottom: 20px;
   }
 
-  .left__header {
-    .header--page {
-      display: flex;
-      font-weight: 700;
-      font-size: 20px;
-      color: #fff;
-    }
+  .left__header .header--page {
+    display: flex;
+    font-weight: 700;
+    font-size: 20px;
+    color: #fff;
   }
 
   .right--page {
@@ -26,144 +25,26 @@
     color: #fff;
     cursor: pointer;
   }
-}
 
-.header-table {
-  color: #fff;
-  background-color: #13141F;
-}
-
-// Table styling
-.table {
-  .table__section {
-    background-color: #1A1C2D;
-    padding: 20px;
-    border-radius: 12px;
-  }
-
-  .table--header {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-    border: none;
-    flex-wrap: wrap;
-
-    select,
-    input {
-      padding: 8px 12px;
-      border-radius: 8px;
-      border: 1px solid #333;
-      background-color: #1F202E;
-      color: #fff;
-    }
-
-    button {
-      background-color: #6142FE;
-      border: none;
-      border-radius: 8px;
-      padding: 8px 16px;
-      color: #fff;
-      cursor: pointer;
-
-      &:hover {
-        opacity: 0.9;
-      }
-    }
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
+  .text {
     color: #fff;
   }
-
-  thead {
-    background-color: #1F202E;
-
-    th {
-      padding: 12px;
-      text-align: left;
-      font-weight: 600;
-      font-size: 14px;
-    }
-  }
-
-  tbody {
-    tr {
-      background-color: #13141F;
-      border-bottom: 1px solid #2A2B3A;
-
-      &:hover {
-        background-color: #1D1F2E;
-      }
-
-      td {
-        padding: 12px;
-        font-size: 14px;
-      }
-    }
-  }
-
-  .table__form {
-    .actions {
-      display: flex;
-      gap: 10px;
-
-      .edit-btn,
-      .delete-btn {
-        border: none;
-        background: none;
-        cursor: pointer;
-        font-size: 16px;
-      }
-
-      .edit-btn {
-        color: orange;
-      }
-
-      .delete-btn {
-        color: red;
-      }
-    }
-  }
-}
-
-.text {
-  color: #fff;
 }
 
 
-
-// Trạng thái hiển thị màu sắc
-.status {
-  font-weight: 600;
-
-  &.waiting {
-    color: #F4C542; 
-  }
-
-  &.success {
-    color: #17C653;
-  }
-
-  &.cancel {
-    color: #FF4D4F; 
-  }
-}
-
-// Checkbox style
-input[type="checkbox"] {
-  accent-color: #6142FE;
-  cursor: pointer;
-}
-
-//validation
 .search-form {
   display: flex;
-  gap: 25px;
-  background-color: #0f0f1a;
+  gap: 16px;
+  flex-wrap: wrap;
+  background-color: #13141F;
   padding: 12px;
   border-radius: 14px;
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
 
   .input-field {
     background-color: #1a1c2d;
@@ -172,8 +53,7 @@ input[type="checkbox"] {
     border-radius: 24px;
     color: #fff;
     font-size: 14px;
-    min-width: 250px;
-    max-height: 200px;
+    min-width: 220px;
     outline: none;
     appearance: none;
 
@@ -182,135 +62,275 @@ input[type="checkbox"] {
     }
   }
 
-  .search-btn {
-    border: none;
-    text-align: center;
-    background-color: #2b2f52;
+  .search-button {
+    background: transparent;
+    border: 1px solid #6142FE;
+    color: #ffffff;
+    font-weight: 500;
     border-radius: 100px;
-    padding: 12px 16px;
-    gap: 8px;
-    color: #fff;
-    cursor: pointer;
-    margin-top: 30px;
+    padding: 0 20px;
+    height: 45px;
+    line-height: 1;
+    transition: all 0.3s ease;
+    box-shadow: none;
+    margin-top: 29px;
 
-    &:hover {
-      opacity: 0.9;
-      box-shadow: 0 0 8px #6142fe;
+    &:hover,
+    &:focus {
+      background-color: #6142fe;
+    }
+
+    &:active {
+      background-color: #4c32d4;
+      border-color: #4c32d4;
     }
   }
 }
 
-/* Tùy chỉnh nút có variant là outlined */
-.ant-btn-variant-outlined {
-  background-color: 0;
-  border-color: 0;
-  color: #1890ff;
-}
 
-.ant-btn-variant-outlined:hover {
-  color: white;
-}
-
-
-//search btn
-.search-button {
-  background: transparent;
-  border: 1px solid #6142FE;
-  color: #ffffff;
-  font-weight: 500;
-  border-radius: 100px;
-  padding: 0 20px;
-  height: 55px;
-  line-height: 1;
-  transition: all 0.3s ease;
-  box-shadow: none;
-  margin-top: 25px;
-
-  &:hover,
-  &:focus {
-    background-color: #6142fe;
-  }
-
-  &:active {
-    background-color: #4c32d4;
-    border-color: #4c32d4;
-  }
-}
-
-/* Bảng dữ liệu */
-.table-wrapper {
+.table__section {
+  background-color: #1A1C2D;
+  border-radius: 12px;
   overflow-x: auto;
-  border-radius: 0px;
+  margin-top: 0 !important;
+  min-height: 550px;
+  margin-top: 10px;
+  
+
+
+
+  .ant-table-wrapper {
+    background: transparent;
+  }
+
+  .ant-table {
+    background: #13141F;
+    color: #fff;
+    border-collapse: collapse;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .ant-table-thead>tr>th {
+    background-color: #13141F;
+    color: #99A1B7;
+    border: none;
+    padding: 6px 10px;
+    font-weight: 500;
+  }
+
+  .ant-table-tbody>tr {
+    background-color: #13141F;
+    border-bottom: 1px solid #2e2f41;
+    transition: background-color 0.3s ease;
+  }
+
+  .ant-table-tbody>tr:hover {
+    background-color: #1D1F2E;
+  }
+
+  .ant-table-tbody>tr>td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #000000;
+    white-space: nowrap;
+  }
+
+  //bỏ đường chia cột mặc định 
+  .ant-table-thead>tr>th:not(:last-child)::before,
+  .ant-table-thead>tr>td:not(:last-child)::before {
+    display: none;
+  }
+
+  //trạng thái bảng rỗng
+  .ant-empty-normal .ant-empty-description {
+    color: #ffffff;
+  }
+
+  .ant-table-tbody>tr.ant-table-placeholder,
+  .ant-table-tbody>tr.ant-table-placeholder:hover>td {
+    background-color: #242533 !important;
+  }
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  color: #fff;
-  font-size: 14px;
-}
-
-tbody tr {
-  background-color: #13141F;
-  border-bottom: 1px solid #2e2f41;
-  transition: background-color 0.3s ease;
-  cursor: default;
-}
-
-
-.ant-table-wrapper .ant-table-thead > tr > th {
-  background-color:  #13141F;
-  color: #99A1B7;
-  border: none;
-  border-right: #000000;
-  padding: 6px 10px;
-}
-
-
-.ant-table-wrapper .ant-table-cell,
-.ant-table-wrapper .ant-table-thead > tr > th,
-.ant-table-wrapper .ant-table-tbody > tr > td {
-  padding: 4px 8px;
-  border-bottom: 1px solid #000000;
+//út tác vụ trong bảng
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 .ant-btn.ant-btn-icon-only {
   width: 32px;
-  padding: 4px ;
+  height: 32px;
+  padding: 4px;
   background-color: #242533;
+  border: none;
 }
 
-.container .ant-btn-variant-outlined {
-  background-color: none;
-  border-color: #000000;
-}
-
-.anticon svg {
+.edit-btn-trade .anticon {
   color: #1B84FF;
 }
 
-
-button.delete-btn-trade svg {
-  width: 20px;
-  height: 20px;
-  fill: red;
+.delete-btn-trade .anticon {
+  color: #F8285A;
 }
 
 
-:where(.css-dev-only-do-not-override-7t2xvq).ant-table-wrapper 
-.ant-table-thead > tr > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before,
-:where(.css-dev-only-do-not-override-7t2xvq).ant-table-wrapper 
-.ant-table-thead > tr > td:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
-  display: none;
+.ant-btn-variant-outlined {
+  background-color: transparent;
+  border-color: transparent;
+  color: #1890ff;
 }
 
-:where(.css-dev-only-do-not-override-7t2xvq).ant-empty-normal .ant-empty-description {
-  color: #ffffff;
+.container .ant-btn-variant-outlined {
+  background-color: transparent;
+  border-color: #000000;
 }
 
-:where(.css-dev-only-do-not-override-7t2xvq).ant-table-wrapper .ant-table-tbody>tr.ant-table-placeholder:hover>th,
-:where(.css-dev-only-do-not-override-7t2xvq).ant-table-wrapper .ant-table-tbody>tr.ant-table-placeholder:hover>td,
-:where(.css-dev-only-do-not-override-7t2xvq).ant-table-wrapper .ant-table-tbody>tr.ant-table-placeholder{
-  background-color: #242533 !important;
+:where(.css-dev-only-do-not-override-7t2xvq).ant-table-wrapper .ant-table-tbody .ant-table-row.ant-table-row-selected >.ant-table-cell{
+  background: #13141F;
 }
 
+.ant-table-wrapper .ant-table-tbody > .ant-table-row:hover > td {
+  background-color: #474963 !important;
+}
+
+
+.status {
+  font-weight: 600;
+
+  &.waiting {
+    color: #F4C542;
+  }
+
+  &.success {
+    color: #17C653;
+  }
+
+  &.cancel {
+    color: #FF4D4F;
+  }
+}
+
+
+input[type="checkbox"] {
+  accent-color: #6142FE;
+  cursor: pointer;
+}
+
+//responsive 
+
+@media screen and (max-width: 1440px) {
+  .container .header-section {
+    padding: 14px;
+  }
+
+  .table__section {
+    padding: 16px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .search-form .input-field {
+    min-width: 200px;
+  }
+}
+
+
+@media screen and (max-width: 991px) {
+
+
+  .table__section .ant-table {
+    min-width: 900px;
+  }
+
+
+  .table__section .ant-table-thead>tr>th,
+  .table__section .ant-table-tbody>tr>td {
+    padding: 6px 8px;
+  }
+
+  .table__section .ant-table {
+    font-size: 13px;
+  }
+
+
+  .search-form {
+    gap: 12px;
+  }
+
+  .search-form .form-group {
+    flex: 1 1 calc(50% - 12px);
+    min-width: 220px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .container .header-section {
+    padding: 12px;
+  }
+
+  .container .left__header .header--page {
+    font-size: 18px;
+  }
+
+
+  .search-form .form-group {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+
+  .search-form .search-button {
+    margin-top: 0;
+    height: 42px;
+  }
+}
+
+@media screen and (max-width: 567px) {
+
+  
+  .table__section .ant-table {
+    min-width: 700px;
+  }
+
+  .table__section {
+    padding: 12px;
+  }
+
+
+  .ant-btn.ant-btn-icon-only {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+
+@media screen and (max-width: 424px) {
+  .container .right--page {
+    padding: 10px 14px;
+  }
+
+  .search-form {
+    padding: 10px;
+  }
+
+  .search-form .input-field {
+    padding: 12px 14px;
+  }
+}
+
+
+@media screen and (max-width: 375px) {
+  .container .left__header .header--page {
+    font-size: 16px;
+  }
+
+  .table__section {
+    padding: 10px;
+  }
+
+  .table__section .ant-table {
+    min-width: 620px;
+  }
+}

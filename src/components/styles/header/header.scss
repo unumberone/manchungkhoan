@@ -4,297 +4,233 @@
   justify-content: space-between;
   align-items: center;
   background-color: #13141f;
-  padding:10px;
+  padding: 10px;
   height: 50px;
   border: 1px solid #13141F;
-  font-size: 500;
-  
-}
 
-.left-section {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-
-  .logo img {
-    height: 32px;
-  }
-
-  .nav-tabs {
+  .left-section {
     display: flex;
-    gap: 40px;
+    align-items: center;
+    gap: 24px;
 
-    .nav-item {
+    .logo img {
+      height: 32px;
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 40px;
+
+      .nav-item {
+        color: white;
+        cursor: pointer;
+        position: relative;
+        font-weight: 500;
+        padding-bottom: 5px;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #a68bff;
+        }
+
+        &.active {
+          color: #7b61ff;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            background-color: #7b61ff;
+          }
+        }
+      }
+    }
+
+    // Toggle ẩn mặc định 
+    .menu-toggle {
+      display: none;
+      font-size: 22px;
       color: white;
       cursor: pointer;
-      position: relative;
-      font-weight: 500;
-      padding-bottom: 5px;
-      transition: color 0.3s;
+      padding: 4px;
 
       &:hover {
         color: #a68bff;
       }
+    }
+  }
 
-      &.active {
-        color: #7b61ff;
+  .right-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 
-        &::after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          height: 2px;
-          width: 100%;
-          background-color: #7b61ff;
+    .title {
+      color: #99A1B7;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: right;
+      margin: 2px 10px 0 0;
+    }
+
+    .account-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      .account-dropdown {
+        background-color: #24253C;
+        border-radius: 20px;
+      }
+
+      select {
+        background-color: #24253C;
+        border: none;
+        border-radius: 20px;
+        padding: 8px 16px;
+        color: white;
+        font-size: 14px;
+        outline: none;
+        appearance: none;
+      }
+
+      .language-selector {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        .flag-icon {
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
         }
       }
     }
-  }
-}
 
-.right-section {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-
-  .title {
-    color: #99A1B7;
-    font-size: 14px;
-    font-weight: 500;
-    text-align: right;
-    margin-right: 10px;
-    margin-bottom: 0;
-      margin-top: 2px;
-  }
-
-  .account-controls {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    .account-dropdown{
-      background-color: #24253C;
-      border-radius: 20px;
+    .signout {
+      background: #020202;
+      color: #020202;
+      cursor: pointer;
     }
 
-    select {
-      background-color: #24253C;
-      border: none;
-      border-radius: 20px;
-      padding: 8px 16px;
-      color: white;
-      font-size: 14px;
-      outline: none;
-      appearance: none;
+    .edit-btn,
+    .delete-btn {
+      background-color: #13141F;
     }
+  }
 
-    .language-selector {
-      display: flex;
-      align-items: center;
-      gap: 4px;
+  //Mobile dropdown menu 
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background: #1a1b2e;
+    flex-direction: column;
+    z-index: 1000;
+    padding: 8px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 
-      .flag-icon {
-        width: 14px;
-        height: 14px;
-        border-radius: 50%;
+    .mobile-item {
+      color: #f5f6fa;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      line-height: 1.5;
+      padding: 14px 20px;
+      border-radius: 6px;
+      margin: 4px 12px;
+      transition: all 0.25s ease;
+      cursor: pointer;
+
+      &:hover {
+        background: rgba(123, 97, 255, 0.15);
+        color: #a68bff;
+        transform: translateX(4px);
+      }
+
+      &.active {
+        background: rgba(123, 97, 255, 0.25);
+        color: #7b61ff;
+        font-weight: 600;
       }
     }
   }
-  .signout{
-    background: #020202;
-    color: #020202;
-    cursor: pointer;
-  }
 
-  .edit-btn, .delete-btn{
-    background-color: #13141F;
+  .mobile-menu.active {
+    display: flex;
+    animation: slideDown 0.3s ease;
   }
 }
 
-// Responsive
 
-@media (max-width: 1440px) {
-  .left-panel .chart-container {
-    width: 100%;
-    height: 520px;
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-
-  .order-section {
-    width: 100%;
-    height: 300px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (max-width: 1280px) {
-  .main-container {
-    flex-direction: column;
-  }
 
-  .left-panel .chart-container {
-    width: 100%;
-    height: 480px;
-  }
+@media (max-width: 1200px) {
+  .header {
+    padding: 8px;
 
-  .order-section {
-    width: 100%;
-    height: auto;
-  }
+    .left-section {
+      .nav-tabs {
+        display: none; // ẩn menu ngang
+      }
 
-  .right-panel {
-    max-width: 100%;
-    margin-top: 20px;
-  }
+      .menu-toggle {
+        display: block; // hiện nút toggle
+      }
+    }
 
-  .center-panel {
-    position: static;
-    width: 100%;
-    margin-top: 20px;
+    .right-section {
+      gap: 12px;
+    }
   }
 }
 
-@media (max-width: 991px) {
-  .left-panel .chart-container {
-    display: none;
-  }
-
-  .order-section {
-    height: auto;
-    padding: 10px;
-    width: 100%;
-  }
-
-  .right-panel {
-    margin-top: 20px;
-    max-width: 100%;
-  }
-}
 
 @media (max-width: 768px) {
-  .main-container {
-    padding: 0 10px;
-  }
-
-  .order-tabs button,
-  .form-tabs button,
-  .form-order-style button {
-    font-size: 12px;
-    padding: 8px;
-  }
-
-  .form-group select,
-  .input-control span {
-    font-size: 13px;
-  }
-
   .header {
-    padding: 10px 10px;
-    height: auto;
-  }
-  .left-section {
-    gap: 1px;
-  }
-  .left-section .nav-tabs {
-    gap: 10px;
-    font-size: 14px;
-  }
-  .right-section {
-    gap: 8px;
-  }
-  .right-section .account-controls {
-    gap: 6px;
-    font-size: 13px;
+    .right-section {
+      .title {
+        display: none;
+      }
+
+      .account-controls select {
+        padding: 6px 12px;
+      }
+    }
   }
 }
+
 
 @media (max-width: 567px) {
-  .order-tabs {
-    flex-direction: column;
-  }
-
-  .order-tabs button,
-  .form-tabs button {
-    font-size: 11px;
-    padding: 6px;
-  }
-
-  .form-group select {
-    padding: 14px;
-  }
-
   .header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 6px;
-    height: auto;
-    min-width: 0;
-  }
+    padding: 6px;
 
-  .left-section,
-  .right-section {
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-    min-width: 0;
-  }
+    .right-section {
+      gap: 8px;
 
-  .nav-tabs {
-    flex-wrap: wrap;
-    gap: 8px;
-    font-size: 13px;
-  }
+      .account-controls {
+        gap: 8px;
 
-  .title {
-    font-size: 12px;
-    margin-right: 4px;
-  }
-
-  .account-controls {
-    gap: 6px;
-    font-size: 12px;
-  }
-
-  .account-controls select {
-    font-size: 12px;
-    padding: 2px 8px;
-  }
-
-  .signout {
-    font-size: 12px;
-    padding: 2px 8px;
-  }
-}
-
-@media (max-width: 424px) {
-  .main-container {
-    margin-left: 0;
-  }
-
-  .order-tabs button {
-    font-size: 10px;
-    padding: 5px;
-  }
-
-  .form-action {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 375px) {
-  .order-section {
-    padding: 5px;
-  }
-
-  .order-tabs button {
-    font-size: 9px;
-  }
-
-  .form-input label {
-    font-size: 12px;
-  }
-
-  .input-control span {
-    font-size: 12px;
+        select {
+          font-size: 12px;
+          padding: 4px 10px;
+        }
+      }
+    }
   }
 }

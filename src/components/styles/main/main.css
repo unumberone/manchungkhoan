@@ -11,7 +11,7 @@
 
 .left-panel-high {
   display: flex;
-  flex-direction: row; /* mặc định là row, nên có thể không cần ghi */
+  flex-direction: row;
   align-items: flex-start;
   position: relative;
 }
@@ -532,7 +532,6 @@
   gap: 12px;
 }
 
-/* Buttons inside modal */
 .btn {
   min-width: 120px;
   height: 40px;
@@ -564,55 +563,87 @@
   filter: brightness(1.1);
 }
 
-@media (max-width: 1440px) {
+@media screen and (max-width: 1440px) {
   .left-panel .chart-container {
-    width: 100%;
-    height: 520px;
+    height: 480px;
   }
   .order-section {
-    width: 100%;
-    height: 300px;
+    height: 280px;
   }
 }
-@media (max-width: 1280px) {
+@media screen and (max-width: 1280px) {
   .main-container {
     flex-direction: column;
   }
   .left-panel .chart-container {
-    width: 100%;
-    height: 480px;
-  }
-  .order-section {
-    width: 100%;
-    height: auto;
-  }
-  .right-panel {
-    max-width: 100%;
-    margin-top: 20px;
+    height: 420px;
   }
   .center-panel {
+    width: 100%;
+    margin: 10px 0 0 0;
     position: static;
-    width: 100%;
-    margin-top: 20px;
-  }
-}
-@media (max-width: 991px) {
-  .left-panel .chart-container {
-    display: none;
-  }
-  .order-section {
-    height: auto;
-    padding: 10px;
-    width: 100%;
   }
   .right-panel {
-    margin-top: 20px;
     max-width: 100%;
+    margin-top: 16px;
+  }
+  .order-section {
+    width: 100%;
+    height: auto;
   }
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 991px) {
   .main-container {
-    padding: 0 10px;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .left-panel-high {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .left-panel-high .chart-container {
+    order: 1;
+    width: 100%;
+    height: 320px;
+  }
+  .left-panel-high .chart-container iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+  }
+  .left-panel-high .center-panel {
+    order: 2;
+    width: 100%;
+    margin: 0;
+  }
+  /* Bảng ở dưới cùng trong left-panel */
+  .right-panel-low {
+    order: 3;
+    width: 100%;
+  }
+  .right-panel-low .order-section {
+    width: 100%;
+    height: auto;
+    padding: 8px;
+    overflow-x: auto;
+  }
+  .right-panel-low .order-table {
+    min-width: 700px;
+  }
+  .right-panel {
+    max-width: 100%;
+    margin-top: 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-container {
+    padding: 0 8px;
+  }
+  .left-panel-high .chart-container {
+    height: 260px;
   }
   .order-tabs button,
   .form-tabs button,
@@ -625,42 +656,35 @@
     font-size: 13px;
   }
 }
-@media (max-width: 567px) {
+@media screen and (max-width: 567px) {
   .order-tabs {
     flex-direction: column;
   }
-  .order-tabs button,
-  .form-tabs button {
-    font-size: 11px;
-    padding: 6px;
+  .right-panel-low .order-table {
+    min-width: 600px;
   }
   .form-group select {
-    padding: 14px;
+    padding: 12px;
   }
 }
-@media (max-width: 424px) {
-  .main-container {
-    margin-left: 0;
+@media screen and (max-width: 424px) {
+  .form-action {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .form-action button {
+    width: 100%;
+  }
+  .left-panel-high .chart-container {
+    height: 220px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .right-panel-low .order-section {
+    padding: 4px;
   }
   .order-tabs button {
     font-size: 10px;
-    padding: 5px;
-  }
-  .form-action {
-    flex-direction: column;
-  }
-}
-@media (max-width: 375px) {
-  .order-section {
-    padding: 5px;
-  }
-  .order-tabs button {
-    font-size: 9px;
-  }
-  .form-input label {
-    font-size: 12px;
-  }
-  .input-control span {
-    font-size: 12px;
+    padding: 4px;
   }
 }/*# sourceMappingURL=main.css.map */

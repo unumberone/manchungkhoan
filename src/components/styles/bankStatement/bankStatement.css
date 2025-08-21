@@ -1,8 +1,18 @@
+body {
+  background-color: #13141F !important;
+  color: #E0E0E0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
 .search-form .input-field {
   background-color: #24253C;
   line-height: 30px;
   align-items: flex-end;
   flex-wrap: wrap;
+}
+
+.statement-search {
+  margin: 20px 0 20px 0;
 }
 
 .section-switcher {
@@ -39,9 +49,10 @@
   flex-direction: column;
   gap: 12px;
   width: 900px;
+  margin-bottom: 20px;
 }
 .statement-summary__card {
-  background-color: #13141f;
+  background-color: #24253C;
   padding: 16px;
   border-radius: 8px;
   color: #ccc;
@@ -73,4 +84,18 @@
 }
 .statement-summary__value--down {
   color: #ff5252;
+}
+
+@media screen and (max-width: 1440px) {
+  .statement-summary {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .search-form.statement-search {
+    gap: 14px;
+  }
+  .statement-summary__group {
+    gap: 20px;
+  }
 }/*# sourceMappingURL=bankStatement.css.map */

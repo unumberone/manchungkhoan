@@ -192,8 +192,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 8px 16px;
   background: #141527;
-  border: 1px solid #2f3352;
-  border-radius: 12px;
+  border: none;
   padding: 12px 14px;
 }
 
@@ -384,7 +383,6 @@
     width: 100%;
   }
 }
-/* ===== Modal Overlay ===== */
 .modal__overlay {
   position: fixed;
   inset: 0;
@@ -398,7 +396,6 @@
   z-index: 1100;
 }
 
-/* ===== Panel ===== */
 .modal__panel {
   width: 620px;
   max-width: 100%;
@@ -419,13 +416,11 @@
     opacity: 1;
   }
 }
-/* ===== Header ===== */
 .modal__header {
   position: relative;
   padding: 16px 20px 14px;
   background: linear-gradient(180deg, rgba(106, 76, 255, 0.18), rgba(106, 76, 255, 0) 58%), linear-gradient(180deg, #171a2b, #121428);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  /* thin purple line under header (như ảnh) */
 }
 .modal__header h3 {
   margin: 0;
@@ -469,7 +464,6 @@
   transform: scale(0.98);
 }
 
-/* ===== Body ===== */
 .modal__body.transfer-confirm {
   padding: 12px 20px 0;
 }
@@ -498,7 +492,6 @@
   font-size: 14px;
 }
 
-/* Grid 2 cột như ảnh */
 .transfer-confirm .info-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -523,7 +516,6 @@
   word-break: break-word;
 }
 
-/* bank badge (icon + text) */
 .transfer-confirm .value.bank {
   display: inline-flex;
   align-items: center;
@@ -536,7 +528,6 @@
   display: block;
 }
 
-/* ===== Footer buttons ===== */
 .modal__footer {
   display: flex;
   justify-content: center;

@@ -69,7 +69,8 @@ const BankStatement = () => {
 
   return (
     <div className="container">
-      <div className="header-section">
+      <div className="page-bg">
+        <div className="header-section">
         <div className="left__header">
           <h1 className="header--page text">Sao kê tiền</h1>
         </div>
@@ -84,7 +85,7 @@ const BankStatement = () => {
 
 
 
-      <div className="search-form">
+      <div className="search-form statement-search">
         <div className="form-group">
           <label htmlFor="account-select">Tài khoản</label>
           <select id="account-select" className="input-field">
@@ -118,7 +119,7 @@ const BankStatement = () => {
       </div>
 
 
-                <div className="form-group">
+          <div className="form-group">
           <div className="statement-summary">
             {indexData.map((index) => (
               <div className="statement-summary__card" key={index.id}>
@@ -152,8 +153,9 @@ const BankStatement = () => {
         </div>
 
 
-      <div className="table__section">
+      <div className="table__section bank">
         <Table columns={columns} dataSource={data} pagination={false} />
+      </div>
       </div>
     </div>
   );

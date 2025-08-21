@@ -26,7 +26,7 @@ const Login = () => {
   const onFinish = async (values) => {
     try {
       const ok =
-        (values.username === "demo" && values.password === "demo123") ||
+        (values.username === "demo" && values.password === "demo") ||
         (values.username === "hanhvh" && values.password === "123456");
 
       if (!ok) throw new Error("Sai tài khoản hoặc mật khẩu");

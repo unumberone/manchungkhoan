@@ -5,17 +5,18 @@
   width: auto;
   background-color: #000000;
   color: #fff;
-  font-family: Arial, sans-serif; 
-  margin-left: 10px;  
+  font-family: Arial, sans-serif;
+  margin-left: 10px;
 }
 
 // LEFT PANEL 
 .left-panel-high {
   display: flex;
-  flex-direction: row; /* mặc định là row, nên có thể không cần ghi */
+  flex-direction: row;
   align-items: flex-start;
   position: relative;
 }
+
 .left-panel {
   background-color: #000000;
   margin-bottom: 6px;
@@ -23,93 +24,94 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
-  min-width: 0; 
+  min-width: 0;
 
-  .chart-container{
+  .chart-container {
     flex: 1;
-    height: 570px;  
+    height: 570px;
     min-width: 0;
   }
 
   // Ô trung tâm hiển thị thông tin tài sản
-.center-panel {
-  height: 548px;
-  width: 400px;
-  margin-top: 10px;
-  margin-right: 10px;
-  background-color: #13141F;
-  z-index: 1;
-}
-//css các phần tử trong ô trung tâm
-.asset-tabs {
-  display: flex;
-  border-bottom: 1px solid #23243a;
-  background: #13141F;
-  
-  .asset-tab {
-    flex: 1;
-    white-space: nowrap;
-    padding: 12px;
-    text-align: center;
-    color: #99A1B7;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    
-    &.active {
-      color: #fff;
-      border-bottom: 2px solid #6142FE;
-      background: #23243a;
-      color: #7b61ff;
+  .center-panel {
+    height: 548px;
+    width: 400px;
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color: #13141F;
+    z-index: 1;
+  }
+
+  //css các phần tử trong ô trung tâm
+  .asset-tabs {
+    display: flex;
+    border-bottom: 1px solid #23243a;
+    background: #13141F;
+
+    .asset-tab {
+      flex: 1;
+      white-space: nowrap;
+      padding: 12px;
+      text-align: center;
+      color: #99A1B7;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+
+      &.active {
+        color: #fff;
+        border-bottom: 2px solid #6142FE;
+        background: #23243a;
+        color: #7b61ff;
+      }
+
+      &:hover {
+        color: #fff;
+      }
     }
-    
-    &:hover {
+  }
+
+  .asset-content {
+    padding: 10px;
+    max-height: auto;
+  }
+
+  .asset-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+    border-bottom: 1px solid #333;
+    font-size: 14px;
+    border-bottom: none !important;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .asset-label {
+      font-family: 'BT Beau Sans', sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 14px;
+      color: #99A1B7;
+      line-height: 27px;
+      letter-spacing: 0;
+      vertical-align: middle;
+    }
+
+
+    .asset-value {
       color: #fff;
+      font-weight: 500;
+      text-align: right;
+
+      &.positive {
+        color: #00ff88;
+      }
     }
   }
-}
-
-.asset-content {
-  padding: 10px;
-  max-height: auto;
-}
-
-.asset-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4px;
-  border-bottom: 1px solid #333;
-  font-size: 14px;
-  border-bottom: none !important;
-  
-  &:last-child {
-    border-bottom: none;
-  }
-  
-  .asset-label {
-    font-family: 'BT Beau Sans', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 14px;
-    color: #99A1B7;
-    line-height: 27px;
-    letter-spacing: 0;
-    vertical-align: middle;
-}
-
-  
-  .asset-value {
-    color: #fff;
-    font-weight: 500;
-    text-align: right;
-    
-    &.positive {
-      color: #00ff88;
-    } 
-  }
-}
 }
 
 //css các phần tử có trong ô danh sách các lệnh
@@ -123,7 +125,7 @@
   max-width: 100%;
 }
 
-.thead{
+.thead {
   background-color: #13141F;
 }
 
@@ -131,7 +133,7 @@
   display: flex;
   border-bottom: 1px solid #13141F;
   background-color: #13141F;
-  
+
 }
 
 .order-tabs button {
@@ -183,7 +185,7 @@
   position: sticky;
   top: 0;
   z-index: 10;
-   max-width: 200px;  
+  max-width: 200px;
 }
 
 .order-table .link {
@@ -208,11 +210,12 @@
   align-items: center;
 }
 
-.edit-btn{
+.edit-btn {
   color: #1B84FF;
   border: none;
 }
-.delete-btn{
+
+.delete-btn {
   color: #F8285A;
 }
 
@@ -226,12 +229,29 @@
   transition: all 0.2s;
 }
 
-  .cho-khop { color: #F6B100; }
-  .khop-het { color: #17C653; }
-  .Cho-gui-len-So { color: #FF6F1E; }
-  .khop-1-phan { color: #1B84FF; }
-  .lenh-da-bi-huy { color: #F8285A; }
-  .mac-dinh { color: #FFFFFF; }
+.cho-khop {
+  color: #F6B100;
+}
+
+.khop-het {
+  color: #17C653;
+}
+
+.Cho-gui-len-So {
+  color: #FF6F1E;
+}
+
+.khop-1-phan {
+  color: #1B84FF;
+}
+
+.lenh-da-bi-huy {
+  color: #F8285A;
+}
+
+.mac-dinh {
+  color: #FFFFFF;
+}
 
 // RIGHT PANEL 
 //Form hiển thị lệnh xác định giao dịch
@@ -257,7 +277,7 @@
   color: #99A1B7;
   font-weight: 500;
   display: flex;
- 
+
   button {
     flex: 1;
     padding: 12px 8px;
@@ -268,14 +288,14 @@
     transition: all 0.2s;
     color: #fff;
     border-bottom: 2px solid transparent;
-    
-    &.active { 
+
+    &.active {
       color: #fff;
       border-bottom: 2px solid #6142FE;
       background: #23243a;
       color: #7b61ff;
     }
-    
+
   }
 }
 
@@ -299,7 +319,7 @@
   cursor: pointer;
   transition: all 0.2s;
   border-bottom: 2px solid transparent;
-  
+
   select {
     padding: 16px;
     background-color: #24253C;
@@ -315,7 +335,7 @@
 .form-order-type {
   display: flex;
   gap: 4px;
-  
+
   button {
     flex: 1;
     padding: 10px 12px;
@@ -325,7 +345,7 @@
     color: #ccc;
     cursor: pointer;
     font-size: 14px;
-    
+
     &.active {
       background-color: #24253C;
       color: #fff;
@@ -473,7 +493,10 @@
 }
 
 @keyframes modalIn {
-  to { transform: translateY(0); opacity: 1; }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .modal__header {
@@ -504,7 +527,9 @@
   cursor: pointer;
   border-radius: 8px;
 
-  &:hover { background: rgba(255,255,255,0.06); }
+  &:hover {
+    background: rgba(255, 255, 255, 0.06);
+  }
 }
 
 .modal__body {
@@ -513,7 +538,7 @@
   .info-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); // 3 cột
-    gap: 60px 70px; 
+    gap: 60px 70px;
   }
 
   .item {
@@ -549,7 +574,7 @@
   gap: 12px;
 }
 
-/* Buttons inside modal */
+
 .btn {
   min-width: 120px;
   height: 40px;
@@ -561,7 +586,9 @@
   cursor: pointer;
   transition: filter .15s ease;
 
-  &:hover { filter: brightness(1.05); }
+  &:hover {
+    filter: brightness(1.05);
+  }
 }
 
 .btn--ghost {
@@ -569,79 +596,123 @@
   border-color: #434665;
   color: #cfd2e6;
 
-  &:hover { background: rgba(255,255,255,0.06); }
+  &:hover {
+    background: rgba(255, 255, 255, 0.06);
+  }
 }
 
 .btn--primary {
   background: #5a4bff;
 
-  &:hover { filter: brightness(1.1); }
+  &:hover {
+    filter: brightness(1.1);
+  }
 }
 
 
-
-// Responsive 
-
-
-@media (max-width: 1440px) {
+//responsive 
+@media screen and (max-width: 1440px) {
   .left-panel .chart-container {
-    width: 100%;
-    height: 520px;
+    height: 480px;
   }
 
   .order-section {
-    width: 100%;
-    height: 300px;
+    height: 280px;
   }
 }
 
-@media (max-width: 1280px) {
+
+@media screen and (max-width: 1280px) {
   .main-container {
     flex-direction: column;
   }
 
   .left-panel .chart-container {
-    width: 100%;
-    height: 480px;
-  }
-
-  .order-section {
-    width: 100%;
-    height: auto;
-  }
-
-  .right-panel {
-    max-width: 100%;
-    margin-top: 20px;
+    height: 420px;
   }
 
   .center-panel {
+    width: 100%;
+    margin: 10px 0 0 0;
     position: static;
-    width: 100%;
-    margin-top: 20px;
-  }
-}
-
-@media (max-width: 991px) {
-  .left-panel .chart-container {
-    display: none;
-  }
-
-  .order-section {
-    height: auto;
-    padding: 10px;
-    width: 100%;
   }
 
   .right-panel {
-    margin-top: 20px;
     max-width: 100%;
+    margin-top: 16px;
+  }
+
+  .order-section {
+    width: 100%;
+    height: auto;
   }
 }
 
-@media (max-width: 768px) {
+
+@media screen and (max-width: 991px) {
   .main-container {
-    padding: 0 10px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+
+  .left-panel-high {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .left-panel-high .chart-container {
+    order: 1;
+    width: 100%;
+    height: 320px;
+  }
+
+  .left-panel-high .chart-container iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+  }
+
+  .left-panel-high .center-panel {
+    order: 2;
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Bảng ở dưới cùng trong left-panel */
+  .right-panel-low {
+    order: 3;
+    width: 100%;
+  }
+
+  .right-panel-low .order-section {
+    width: 100%;
+    height: auto;
+    padding: 8px;
+    overflow-x: auto;
+  }
+
+  .right-panel-low .order-table {
+    min-width: 700px;
+  }
+
+  .right-panel {
+    max-width: 100%;
+    margin-top: 16px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    padding: 0 8px;
+  }
+
+  .left-panel-high .chart-container {
+    height: 260px;
   }
 
   .order-tabs button,
@@ -657,51 +728,43 @@
   }
 }
 
-@media (max-width: 567px) {
+@media screen and (max-width: 567px) {
   .order-tabs {
     flex-direction: column;
   }
 
-  .order-tabs button,
-  .form-tabs button {
-    font-size: 11px;
-    padding: 6px;
+  .right-panel-low .order-table {
+    min-width: 600px;
   }
 
   .form-group select {
-    padding: 14px;
+    padding: 12px;
   }
 }
 
-@media (max-width: 424px) {
-  .main-container {
-    margin-left: 0;
+
+@media screen and (max-width: 424px) {
+  .form-action {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-action button {
+    width: 100%;
+  }
+
+  .left-panel-high .chart-container {
+    height: 220px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .right-panel-low .order-section {
+    padding: 4px;
   }
 
   .order-tabs button {
     font-size: 10px;
-    padding: 5px;
-  }
-
-  .form-action {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 375px) {
-  .order-section {
-    padding: 5px;
-  }
-
-  .order-tabs button {
-    font-size: 9px;
-  }
-
-  .form-input label {
-    font-size: 12px;
-  }
-
-  .input-control span {
-    font-size: 12px;
+    padding: 4px;
   }
 }

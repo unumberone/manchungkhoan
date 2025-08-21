@@ -1,16 +1,28 @@
+body {
+  background-color: #13141F !important;
+  color: #E0E0E0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
 
 .search-form .input-field {
-    background-color: #24253C; 
-     line-height: 30px;
-    align-items: flex-end; 
-    flex-wrap: wrap;
+  background-color: #24253C;
+  line-height: 30px;
+  align-items: flex-end;
+  flex-wrap: wrap;
 }
+
+.statement-search {
+  margin: 20px 0 20px 0;
+}
+
+
 
 //css cho phần menu hiển thị dưới phần sao kê tiền
 .section-switcher {
   display: flex;
   gap: 18px;
   background-color: #13141F;
+  
 
 
   &__item {
@@ -26,9 +38,7 @@
 
     &--active {
       color: #6142FE;
-      background: linear-gradient(
-        180deg,rgba(97, 66, 254, 0) 0%, rgba(97, 66, 254, 0.2) 100%
-      );
+      background: linear-gradient(180deg, rgba(97, 66, 254, 0) 0%, rgba(97, 66, 254, 0.2) 100%);
 
       &::after {
         content: '';
@@ -49,10 +59,11 @@
   flex-direction: column;
   gap: 12px;
   width: 900px;
+  margin-bottom: 20px;
 
 
   &__card {
-    background-color: #13141f;
+    background-color: #24253C;
     padding: 16px;
     border-radius: 8px;
     color: #ccc;
@@ -94,9 +105,21 @@
   }
 }
 
+//Responsive
+
+@media screen and (max-width: 1440px) {
+  .statement-summary {
+    width: 100%;
+  }
+}
 
 
+@media screen and (max-width: 1280px) {
+  .search-form.statement-search {
+    gap: 14px;
+  }
 
-
-
-
+  .statement-summary__group {
+    gap: 20px;
+  }
+}

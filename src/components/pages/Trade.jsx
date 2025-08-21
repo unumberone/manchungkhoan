@@ -3,7 +3,7 @@ import { Table, Button, Modal, Form, Input, Select, DatePicker } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import '../styles/Trade/trade.scss';
 import dayjs from 'dayjs';
-import TransferForm from '../pages/Formpayment'; // 
+import TransferForm from '../pages/Formpayment'; 
 
 const { Option } = Select;
 
@@ -119,6 +119,7 @@ const Trade = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [form] = Form.useForm();
+  const [selectedRowKeys, setSelectedRowKeys] = useState([]); // FIX: khai báo state cho rowSelection
 
   const handleTransferClick = () => {
     setShowForm(true);
@@ -178,6 +179,14 @@ const Trade = () => {
     }
   ];
 
+  // Row selection 
+  const rowSelection = {
+    selectedRowKeys,
+    onChange: (newSelectedKeys) => {
+      setSelectedRowKeys(newSelectedKeys);
+    }
+  };
+
   return (
     <div className="container">
       <div className="header-section">
@@ -187,12 +196,10 @@ const Trade = () => {
         <div className="right__header">
           <button className='right--page text' onClick={handleTransferClick}>Chuyển khoản</button>
         </div>
-        {/* FORM chuyển khoản (import từ TransferForm.jsx) */}
         {showForm && <TransferForm onCancel={() => setShowForm(false)} />}
       </div>
 
       <div className="search-form">
-        {/* Form tìm kiếm */}
         <div className="form-group">
           <label htmlFor="account-select">Tài khoản</label>
           <select id="account-select" className="input-field">
@@ -234,6 +241,7 @@ const Trade = () => {
 
       <div className="table__section">
         <Table
+          rowSelection={rowSelection}
           columns={columns}
           dataSource={data}
           rowKey="key"

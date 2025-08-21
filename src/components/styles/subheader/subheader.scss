@@ -1,151 +1,150 @@
-// css phần hiển thị thông tin của các chứng khoán bao gồm giá, mã chứng khoán, lãi lỗ, sức mua, khối lượng giao dịch
-.market-stats{
+
+.market-stats {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   padding: 2px;
   width: 100%;
   background-color: #000000;
-  overflow-x: auto;
-  margin-top: 10px;
+  padding-block: 12px;
+  margin-block: 0;
+  background-clip: padding-box;
 
-.market-card {
-  background-color: #13141F;
-  color: white;
-  padding: 12px;
-  border-radius: 8px;
-  width: 100%;
-  height: 80px;
-  font-size: 13px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: 14px 14px rgba(12, 12, 12, 0.3);
-}
-.market-card .row {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  height: 100%;
-}
-.market-card .left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  flex: 1;
-  gap: 12px;
-  padding: 10px;
-}
-.market-card .left .name {
-  font-weight: 600;
-  font-size: 14px;
-  color: #cfcfcf;
-}
-.market-card .left .volume {
-  font-size: 13px;
-  color: #aaa;
-}
-.market-card .left .stats {
-  display: flex;
-  gap: 6px;
-  font-weight: 600;
-  font-size: 13px;
-}
-.market-card .left .stats .valueUp{
-  font-size: 13px;
-  font-weight: 400;
-  color: #aaa;
-}
-.market-card .left .stats .valueDown{
-  font-size: 13px;
-  font-weight: 400;
-  color: #aaa;  
-}
-.market-card .left .stats .up {
-  color: #17C653;
-}
-.market-card .left .stats .valueUp {
-  color: #9E63FF;
-}
-.market-card .left .stats .nochange {
-  color: #F6B100;
-}
-.market-card .left .stats .down {
-  color: #ff4d4f;
-}
-.market-card .left .stats .valueDown {
-  color: #00CECE;
-}
-.market-card .left .stats span {
-  display: flex;
-  align-items: center;
-}
-.market-card .right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  flex: 1;
-  gap: 12px;
-  padding: 10px;
-}
-.market-card .right .value-change {
-  font-weight: 400;
-  font-size: 12px;
-  margin-bottom: 2px;
-}
-.market-card .right .value-change.green {
-  color: #24d164;
-}
-.market-card .right .value-change.red {
-  color: #ff4d4f;
-}
-.market-card .right .value-change.gray {
-  color: #888;
-}
-.market-card .right .value-change span {
-  font-weight: 400;
-  font-size: 12px;
-  margin-left: 4px;
-}
-.market-card .right .value-trade, .market-card .right .waiting {
-  font-size: 12px;
-  color: #aaa;
-  margin-bottom: 2px;
-}
+  .market-card {
+    background-color: #13141F;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    flex: 1 1 300px;
+    max-width: 360px;
+    height: auto;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 4px rgba(12, 12, 12, 0.3);
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      flex: 1;
+      gap: 8px;
+      padding: 6px;
+
+      .name {
+        font-weight: 600;
+        font-size: 14px;
+        color: #cfcfcf;
+      }
+
+      .volume {
+        font-size: 13px;
+        color: #aaa;
+      }
+
+      .stats {
+        display: flex;
+        gap: 6px;
+        font-weight: 600;
+        font-size: 13px;
+
+        .valueUp,
+        .valueDown {
+          font-size: 13px;
+          font-weight: 400;
+          color: #aaa;
+        }
+
+        .up {
+          color: #17C653;
+        }
+
+        .valueUp {
+          color: #9E63FF;
+        }
+
+        .nochange {
+          color: #F6B100;
+        }
+
+        .down {
+          color: #ff4d4f;
+        }
+
+        .valueDown {
+          color: #00CECE;
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      flex: 1;
+      gap: 8px;
+      padding: 6px;
+
+      .value-change {
+        font-weight: 400;
+        font-size: 12px;
+        margin-bottom: 2px;
+
+        &.green {
+          color: #24d164;
+        }
+
+        &.red {
+          color: #ff4d4f;
+        }
+
+        &.gray {
+          color: #888;
+        }
+
+        span {
+          font-weight: 400;
+          font-size: 12px;
+          margin-left: 4px;
+        }
+      }
+
+      .value-trade,
+      .waiting {
+        font-size: 12px;
+        color: #aaa;
+        margin-bottom: 2px;
+      }
+    }
+  }
 }
 
-.market-card {
-  background-color: #3f3f49;
-  color: white;
-  padding: 12px;
-  border-radius: 8px;
-  width: 369.6px;
-  height: 70px;
-  font-size: 13px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: 0 0 4px rgba(68, 64, 64, 0.3);
-}
 .stock-row {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
   background-color: #181925;
   color: #dcdcdc;
   font-size: 13px;
   padding: 10px 12px;
-  gap: 60px;
-  overflow-x: auto;
-  margin-top: 10px;
- 
+  gap: 40px;
+  
 
-  > div {
+  >div {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start; // tiêu đề căn trái
+    align-items: flex-start;
     min-width: 85px;
     max-width: 100px;
     white-space: nowrap;
@@ -155,7 +154,6 @@
     margin-top: 4px;
     padding: 2px 0px;
     text-align: center;
-    white-space: nowrap;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -188,275 +186,82 @@
   }
 }
 
-@media only screen and (max-width: 1200px) {
+//RESPONSIVE
+
+
+@media screen and (max-width: 1200px) {
   .market-stats {
-    align-items: center;
     gap: 8px;
+
+    .market-card {
+      flex: 260px;
+      max-width: 300px;
+    }
   }
-  .market-card {
-    width: 100%;
-    height: auto;
-    margin-bottom: 12px;
-  }
+
   .stock-row {
-    align-items: center;
-    gap: 8px;
-  }
-}
-
-// Responsive
-@media (max-width: 1440px) {
-  .left-panel .chart-container {
-    width: 100%;
-    height: 520px;
-  }
-
-  .order-section {
-    width: 100%;
-    height: 300px;
+    gap: 30px;
+    font-size: 12px;
   }
 }
 
 
-@media (max-width: 1280px) {
-  .left-panel .chart-container {
-    height: 480px;
-  }
-
-  .order-section,
-  .right-panel,
-  .center-panel {
-    width: 100%;
-    height: auto;
-  }
-
-  .right-panel,
-  .center-panel {
-    margin-top: 20px;
-  }
-
-  .center-panel {
-    position: static;
-  }
-
+@media screen and (max-width: 991px) {
   .market-stats {
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .market-card {
-    width: 100%;
-    height: auto;
-    margin-bottom: 12px;
+    .market-card {
+      flex: 1 1 240px;
+      max-width: 300px;
+      font-size: 12px;
+    }
   }
 
   .stock-row {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px 16px;
-    margin-top: 10px;
-    background-color: #181925;
-    color: #dcdcdc;
-    font-size: 13px;
-    gap: 16px;
-
-    > div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: 90px;
-      flex: 1 1 90px;
-      margin-right: 8px;
-      margin-bottom: 4px;
-      white-space: nowrap;
-    }
-
-    .cell {
-      min-width: 80px;
-      padding: 2px 6px;
-      text-align: center;
-      border-radius: 4px;
-      margin-top: 2px;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      white-space: nowrap;
-    }
-
-    .code,
-    .MSCP,
-    .highlight-purple,
-    .highlight-blue,
-    .highlight-orange {
-      font-weight: 600;
-    }
-
-    .MSCP {
-      color: #ffc107;
-    }
-
-    .highlight-purple {
-      color: #9c6eff;
-    }
-
-    .highlight-blue {
-      color: #4dd0e1;
-    }
-
-    .highlight-orange {
-      color: #ffb74d;
-    }
+    gap: 20px;
   }
 }
 
-@media (max-width: 991px) {
-  .left-panel .chart-container {
-    display: none;
-  }
 
-  .order-section {
-    padding: 10px;
-    height: auto;
-    width: 100%;
-  }
-
-  .right-panel {
-    margin-top: 20px;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .main-container {
-    padding: 0 10px;
-  }
-
-  .order-tabs button,
-  .form-tabs button,
-  .form-order-style button {
-    font-size: 12px;
-    padding: 8px;
-  }
-
-  .form-group select,
-  .input-control span {
-    font-size: 13px;
-  }
-
-  .header {
-    padding: 10px;
-    height: auto;
-  }
-
-  .left-section {
-    gap: 1px;
-
-    .nav-tabs {
-      gap: 10px;
-      font-size: 14px;
-    }
-  }
-
-  .right-section {
-    gap: 8px;
-
-    .account-controls {
-      gap: 6px;
-      font-size: 13px;
-    }
-  }
-}
-
-@media (max-width: 567px) {
-  .order-tabs {
-    flex-direction: column;
-  }
-
-  .order-tabs button,
-  .form-tabs button {
-    font-size: 11px;
-    padding: 6px;
-  }
-
-  .form-group select {
-    padding: 14px;
-  }
-
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 6px;
-    height: auto;
-  }
-
-  .left-section,
-  .right-section {
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .nav-tabs {
-    flex-wrap: wrap;
-    gap: 8px;
-    font-size: 13px;
-  }
-
-  .title {
-    font-size: 12px;
-    margin-right: 4px;
-  }
-
-  .account-controls,
-  .account-controls select,
-  .signout {
-    font-size: 12px;
-    padding: 2px 8px;
-  }
-
-  .stock-row {
-    align-items: flex-start;
+@media screen and (max-width: 768px) {
+  .market-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-    padding: 10px;
-  }
-}
 
-@media (max-width: 424px) {
-  .main-container {
-    margin-left: 0;
-  }
-
-  .order-tabs button {
-    font-size: 10px;
-    padding: 5px;
-  }
-
-  .form-action {
-    flex-direction: column;
+    .market-card {
+      width: 100%;
+      max-width: 100%;
+      font-size: 12px;
+    }
   }
 
   .stock-row {
-    gap: 8px;
-    padding: 8px;
-  }
-}
-
-@media (max-width: 375px) {
-  .order-section {
-    padding: 5px;
-  }
-
-  .order-tabs button {
-    font-size: 9px;
-  }
-
-  .form-input label,
-  .input-control span,
-  .stock-row {
+    gap: 16px;
     font-size: 12px;
+
+    >div {
+      min-width: 70px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .market-stats {
+    grid-template-columns: 1fr;
+    gap: 10px;
+
+    .market-card {
+      font-size: 11px;
+      padding: 10px;
+    }
+  }
+
+  .stock-row {
+    gap: 10px;
+    font-size: 11px;
+
+    >div {
+      min-width: 60px;
+    }
   }
 }

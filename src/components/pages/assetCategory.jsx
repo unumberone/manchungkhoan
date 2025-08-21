@@ -55,6 +55,15 @@ const paddedCols = column.map(c => [
   ...Array.from({ length: maxLen - c.length }, () => null),
 ]);
 
+  const [selectedRowKeys, setSelectedRowKeys] = useState([]);
+
+  const rowSelection = {
+    selectedRowKeys,
+    onChange: (newSelectedKeys) => {
+      setSelectedRowKeys(newSelectedKeys);
+    }
+  };
+
 
 
   const tableData = Array.from({ length: 5 }).map((_, i) => ({
@@ -101,59 +110,93 @@ const paddedCols = column.map(c => [
     <div className="container">
       {/* Header */}
       <h1 className="header--page text">Quản lý danh mục tài sản</h1>
-     
 
       {/* Filters */}
-      <div className="search-form">
-        <div className="tab">
-          <h5>Tài khoản</h5>
-          <Select  className='input-field' value={account} onChange={setAccount} style={{ width: 180, marginRight: 12 }} title='Tài khoản'>
-          <Option value="206582897">206582897</Option>
-        </Select>
+      <div className="asset-container">
+        <div className="search-form">
+          <div className="tab">
+            <h5>Tài khoản</h5>
+            <Select
+              className="input-field"
+              value={account}
+              onChange={setAccount}
+              style={{ width: 180, marginRight: 12 }}
+              title="Tài khoản"
+            >
+              <Option value="206582897">206582897</Option>
+            </Select>
+          </div>
+          <div className="tab">
+            <h5>Mã chứng khoán</h5>
+            <Select
+              className="input-field"
+              value={symbol}
+              onChange={setSymbol}
+              style={{ width: 180, marginRight: 12 }}
+            >
+              <Option value="VN30FAU2">VN30FAU2</Option>
+            </Select>
+          </div>
+          <div className="actions-search">
+            <button type="button-btn" className="btn ghost">
+              Tìm kiếm
+            </button>
+          </div>
         </div>
-        <div className="tab">
-          <h5>Mã chứng khoán</h5>
-          <Select className='input-field' value={symbol} onChange={setSymbol} style={{ width: 180, marginRight: 12 }}>
-          <Option value="VN30FAU2">VN30FAU2</Option>
-        </Select>
-        </div>
-        <div className="actions-search">
-          <button type="button-btn" className="btn ghost" >Tìm kiếm</button>
-         </div>
-      </div>
 
-      <div className="asset__body">
-          <div className="tab-bar text" style={{ marginTop: 20, marginBottom: 20 }}>
-        <span className="tab active">Tài sản và sức mua</span>
-        <span className="tab">Số dư chứng khoán</span>
-      </div>
+        <div className="asset__body">
+          <div
+            className="tab-bar text"
+            style={{ marginTop: 20, marginBottom: 20 }}
+          >
+            <span className="tab active">Tài sản và sức mua</span>
+            <span className="tab">Số dư chứng khoán</span>
+          </div>
 
-              {/* Asset Summary in 4 Columns */}
-            <Row gutter={[4, 10]}>
+          {/* Asset Summary in 4 Columns */}
+          <Row gutter={[4, 10]}>
             {paddedCols.map((col, colIdx) => (
-            <Col xs={24} md={12} lg={6} key={colIdx}>
-              {col.map((item, i) => (
-                <div className="summary-item" key={i}>
-                  {item ? (
-                    <>
-                      <span className="summary-label" title={item.title}>{item.title}</span>
-                      <span className="summary-value">{item.value}</span>
-                    </>
-                  ) : (
-                    <>
-                      <span className="summary-label" style={{ visibility: 'hidden' }}>.</span>
-                      <span className="summary-value" style={{ visibility: 'hidden' }}>.</span>
-                    </>
-                  )}
-                </div>
-              ))}
-            </Col>
-          ))}
-        </Row>
-      {/* Table */}
-      <div className="table__section" style={{ marginTop: 24 }}>
-        <Table columns={columns} dataSource={tableData} pagination={false} />
-      </div>
+              <Col xs={24} md={12} lg={6} key={colIdx}>
+                {col.map((item, i) => (
+                  <div className="summary-item" key={i}>
+                    {item ? (
+                      <>
+                        <span className="summary-label" title={item.title}>
+                          {item.title}
+                        </span>
+                        <span className="summary-value">{item.value}</span>
+                      </>
+                    ) : (
+                      <>
+                        <span
+                          className="summary-label"
+                          style={{ visibility: "hidden" }}
+                        >
+                          .
+                        </span>
+                        <span
+                          className="summary-value"
+                          style={{ visibility: "hidden" }}
+                        >
+                          .
+                        </span>
+                      </>
+                    )}
+                  </div>
+                ))}
+              </Col>
+            ))}
+          </Row>
+          {/* Table */}
+          <div className="table__section" style={{ marginTop: 24 }}>
+            <Table
+              columns={columns}
+              dataSource={tableData}
+              pagination={false}
+              rowSelection={rowSelection}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

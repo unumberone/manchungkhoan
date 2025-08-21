@@ -1,34 +1,35 @@
-.info{
-    background-color:#23243a ;
+.info {
+  background-color: #23243a;
 }
 
 button-btn {
-    flex: 1;
-    padding: 12px 20px;
-    border: 3px;
-    background-color: #1E1E25;
-    cursor: pointer;
-    font-size: 14px;
-    transition: all 0.2s;
+  flex: 1;
+  padding: 12px 20px;
+  border: 3px;
+  background-color: #1E1E25;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+  color: #fff;
+  border-bottom: 2px solid transparent;
+
+
+  &.active {
     color: #fff;
-    border-bottom: 2px solid transparent;
-    
-    
-    &.active { 
-      color: #fff;
-      border-bottom: 2px solid #6142FE;
-      background: #23243a;
-      color: #7b61ff;
-    }
-    
+    border-bottom: 2px solid #6142FE;
+    background: #23243a;
+    color: #7b61ff;
   }
 
-  .panel {
+}
+
+.panel {
   margin-top: 20px;
   width: 600px;
   height: 480px;
   line-height: 30px;
 }
+
 .panel-note {
   font-size: 12px;
   color: #9aa0b6;
@@ -44,16 +45,19 @@ button-btn {
   height: 480px;
   line-height: 30px;
 }
+
 .info-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px 32px;
 }
+
 .cell .label {
   font-size: 12px;
   color: #9aa0b6;
   margin-bottom: 6px;
 }
+
 .cell .value {
   font-weight: 700;
   color: #ffffff;
@@ -64,11 +68,12 @@ button-btn {
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
-  background: #000000  ;
+  background: #000000;
   padding: 16px;
   height: 480px;
   border-radius: 12px;
 }
+
 .field label {
   display: block;
   font-size: 12px;
@@ -76,6 +81,7 @@ button-btn {
   margin-bottom: 6px;
   margin-left: 100px;
 }
+
 .field input {
   background: #0f1020;
   color: #fff;
@@ -86,6 +92,7 @@ button-btn {
   margin-left: 100px;
   width: 300px;
 }
+
 .field input:focus {
   border-color: #5a4bff;
 }
@@ -109,11 +116,13 @@ button-btn {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #a0a6be;        /* xám nhạt */
+  color: #a0a6be;
+  /* xám nhạt */
   font-size: 14px;
   line-height: 1.6;
   position: relative;
-  padding-left: 26px;     /* chừa chỗ cho dấu tròn */
+  padding-left: 26px;
+  /* chừa chỗ cho dấu tròn */
   transition: color 160ms ease;
   margin-left: 100px;
 }
@@ -126,7 +135,8 @@ button-btn {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  border: 2px solid #5a5e7a;  /* xám */
+  border: 2px solid #5a5e7a;
+  /* xám */
   background: transparent;
   box-sizing: border-box;
   transition: all 160ms ease;
@@ -134,8 +144,10 @@ button-btn {
 
 /* khi đạt rule -> xanh lá */
 .rule.ok {
-  color: #22c55e;              /* xanh lá */
+  color: #22c55e;
+  /* xanh lá */
 }
+
 .rule.ok::before {
   border-color: #22c55e;
   background: #22c55e;
@@ -146,7 +158,8 @@ button-btn {
 .actions {
   display: flex;
   gap: 12px;
-  justify-content: center;   /* đổi thành flex-end nếu muốn canh phải */
+  justify-content: center;
+  /* đổi thành flex-end nếu muốn canh phải */
   margin-top: 16px;
 }
 
@@ -154,7 +167,8 @@ button-btn {
 .btn {
   appearance: none;
   border: 1.5px solid transparent;
-  border-radius: 999px;        /* pill */
+  border-radius: 999px;
+  /* pill */
   padding: 10px 18px;
   min-width: 140px;
   font-weight: 700;
@@ -167,16 +181,20 @@ button-btn {
 
 /* ghost = viền tím + nền tối */
 .btn.ghost {
-  --purple: #6a5cff;          /* tím */
-  --ghost-bg: #1a1930;        /* nền tối hơn modal */
+  --purple: #6a5cff;
+  /* tím */
+  --ghost-bg: #1a1930;
+  /* nền tối hơn modal */
   background: var(--ghost-bg);
   border-color: var(--purple);
   box-shadow: inset 0 0 0 1.5px rgba(106, 92, 255, 0.25);
 }
+
 .btn.ghost:hover {
   background: #201e3d;
   box-shadow: inset 0 0 0 2px rgba(106, 92, 255, 0.45);
 }
+
 .btn.ghost:active {
   transform: translateY(1px);
 }
@@ -188,10 +206,12 @@ button-btn {
   border-color: var(--purple);
   color: #fff;
 }
+
 .btn.primary:hover {
   background: #5a4bff;
   border-color: #5a4bff;
 }
+
 .btn.primary:active {
   transform: translateY(1px);
 }
@@ -208,4 +228,276 @@ button-btn {
   opacity: 0.6;
   cursor: not-allowed;
   transform: none;
+}
+
+/* ================== RESPONSIVE – INFORMATION ================== */
+
+@media screen and (max-width: 1440px) {
+  .info {
+    padding: 0 20px;
+  }
+
+  .form-oder-type {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .panel,
+  .info-card {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+
+  .panel,
+  .info-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 24px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .form-oder-type {
+    max-width: 860px;
+  }
+
+  .panel,
+  .info-card {
+    width: 100%;
+    height: auto;
+    padding: 16px;
+  }
+
+  .panel-note {
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 20px;
+  }
+
+  .fields {
+    padding: 14px;
+    height: auto;
+  }
+
+  .field label {
+    margin-left: 0;
+  }
+
+  .field input {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .pw-checklist {
+    margin-top: 8px;
+  }
+
+  .rule {
+    margin-left: 0;
+    /* bỏ lệch trái 100px */
+    font-size: 13px;
+  }
+
+  @media screen and (max-width: 991px) {
+    .form-oder-type {
+      max-width: 860px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .oder-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    button-btn {
+      flex: 1 1 calc(50% - 8px);
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .info-card,
+    .panel {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      padding: 16px;
+      line-height: 1.4;
+      box-sizing: border-box;
+      margin: 0 auto;
+    }
+
+    .info-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 16px;
+    }
+
+    .cell {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      align-items: center;
+      column-gap: 12px;
+      row-gap: 4px;
+    }
+
+    .field label {
+      margin-left: 0;
+    }
+
+    .field input {
+      margin-left: 0;
+      width: 100%;
+    }
+
+    .fields {
+      padding: 14px;
+      height: auto;
+    }
+
+    .rule {
+      margin-left: 0;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .form-oder-type {
+      max-width: 640px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .oder-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    button-btn {
+      padding: 10px 14px;
+      font-size: 13px;
+      flex: 1 1 100%;
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .info-card,
+    .panel {
+      border-radius: 10px;
+      padding: 14px;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      margin: 0 auto;
+      line-height: 1.4;
+    }
+
+    .info-grid {
+      grid-template-columns: 1fr;
+      gap: 10px 0;
+    }
+
+    .cell .label {
+      font-size: 12px;
+    }
+
+    .cell .value {
+      font-size: 14px;
+      word-break: break-word;
+    }
+
+    .fields {
+      gap: 12px;
+    }
+
+    .actions {
+      gap: 10px;
+    }
+
+    .btn {
+      min-width: 120px;
+      padding: 10px 16px;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .form-oder-type {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .panel-note {
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .info-card,
+    .panel {
+      padding: 12px;
+      width: 100%;
+      max-width: 100%;
+      line-height: 1.4;
+    }
+
+    .rule {
+      font-size: 12.5px;
+      padding-left: 22px;
+    }
+
+    .rule::before {
+      width: 14px;
+      height: 14px;
+    }
+
+    .actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .btn {
+      width: 100%;
+      min-width: 0;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    .info {
+      padding: 0 10px;
+    }
+
+    .info-card,
+    .panel {
+      padding: 10px;
+    }
+
+    .cell .label {
+      font-size: 11.5px;
+    }
+
+    .cell .value {
+      font-size: 13.5px;
+    }
+
+    button-btn {
+      font-size: 12px;
+      padding: 8px 12px;
+    }
+  }
 }
